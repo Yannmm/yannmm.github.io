@@ -1,11 +1,8 @@
 ---
 layout: post
-title: You're up and running!
+title: Action Controller Strong Parameters
 tags: rails
 ---
-
-
-# Action Controller: Strong Parameters
 
 ### Why
 It's forbidden to use raw parameters of `ActionController` for mass-assignment to `Active Model`. Developers have to consciously choose which fields are allowed.  This is a better security practice to help prevent accidentally allowing users to update sensitive model attributes.
