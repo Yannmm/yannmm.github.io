@@ -6,13 +6,13 @@ tags: rails
 
 ## Why
 
-Migration in Rails is **a tool that allows the developer to use Ruby code to change an application's database schema**. Instead of using SQL scripts, we use Ruby code, which is database independent. Active Record will also update your **db/schema.rb** file to match the up-to-date structure of your database.
+Migration in Rails is **a tool that allows the developer to use Ruby code to change an application's database schema**. Instead of using SQL scripts, we use Ruby code, which is database independent. Active Record will also update your `db/schema.rb` file to match the up-to-date structure of your database.
 
   
 
 ## What
 
-Migrations are stored as files in the **db/migrate** directory. In each migration file defines a migration class, which prefixed by a timestamp of the current date and time.
+Migrations are stored as files in the `db/migrate` directory. In each migration file defines a migration class, which prefixed by a timestamp of the current date and time.
 
 Rails provide a tool for you to generate migration in command-line.  Usage:
 
@@ -29,7 +29,7 @@ Notice, fiels parameters decide what columns to add or remove.
 ### Creating New Tables
 
 
-MIGRATION_NAME is **create_{table_name}** followed by a list of column names and types.
+MIGRATION_NAME is `create_{table_name}` followed by a list of column names and types.
 
 ```
 rails generate migration CreateProducts name:string part_number:string
@@ -45,7 +45,7 @@ rails g migration add_name_part_number_to_products name:string part_number:strin
 
 ### Removing Columns
 
-MIGRATION_NAME is **remove_{column1}_{column2}_to_{table_name}** followed by a list of column names and types. Types are optional but can be useful for reverting.
+MIGRATION_NAME is `remove_{column1}_{column2}_to_{table_name}` followed by a list of column names and types. Types are optional but can be useful for reverting.
 
 ### Creating Standalone Migrations
 
