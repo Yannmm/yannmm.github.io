@@ -37,7 +37,7 @@ rails generate migration CreateProducts name:string part_number:string
 
 ### Adding Columns
 
-MIGRATION_NAME is **add_{column1}_{column2}_to_{table_name}** followed by a list of column names and types. Notice, column names should match.
+MIGRATION_NAME is `add_{column1}_{column2}_to_{table_name}` followed by a list of column names and types. Notice, column names should match.
 
 ```
 rails g migration add_name_part_number_to_products name:string part_number:string
@@ -45,7 +45,7 @@ rails g migration add_name_part_number_to_products name:string part_number:strin
 
 ### Removing Columns
 
-MIGRATION_NAME is **remove_{column1}_{column2}_to_{table_name}** followed by a list of column names and types. Types are optional, but can be useful for reverting.
+MIGRATION_NAME is **remove_{column1}_{column2}_to_{table_name}** followed by a list of column names and types. Types are optional but can be useful for reverting.
 
 ### Creating Standalone Migrations
 
