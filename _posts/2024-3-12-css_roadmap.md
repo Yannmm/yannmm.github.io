@@ -36,6 +36,8 @@ Spend some time per day to learn CSS basics.
 
 This is just a test.
 
+Another test I do nothing today
+
 
 **Refs**
 - [Learn CSS to prepare your transition into tech](https://transitionintotech.com/learn-css/)
