@@ -7,8 +7,8 @@ tags: css
 Spend some time per day to learn CSS basics.
 
 - [ ] [Normal Flow](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow)
-- [ ] Syntax
-- [ ] Selectors
+- [ ] [Syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/Syntax)
+- [ ] [Selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
 - [ ] Comments
 - [ ] Colours
 - [ ] Background
