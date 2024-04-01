@@ -9,6 +9,10 @@ Spend some time per day to learn CSS basics.
 - [ ] [Normal Flow](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow)
 - [ ] [Syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/Syntax)
 - [ ] [Selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
+    - Type, class and ID selectors
+    - Attribute selectors
+    - Pseudo-classes and pseudo-elements
+    - Combinators
 - [ ] Comments
 - [ ] Colours
 - [ ] Background
@@ -33,12 +37,6 @@ Spend some time per day to learn CSS basics.
 - [ ] Flexbox
 - [ ] Grid
 - [ ] Effects, transitions, animations
-
-This is just a test.
-
-Another test I do nothing today
-
-Yet another
 
 
 **Refs**
