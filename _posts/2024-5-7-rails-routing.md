@@ -31,7 +31,13 @@ scope :test, as: :test2, path: :test2 do
 	resources :cars, only: :index
 end
 ```
-  
+ 
+ By the way, for `scope` with `module`  set explicitly and `namespace` whose `module` is set implicitly. A module is automatically defined:
+
+```
+Module Test
+end
+```
   
 
 ### How
