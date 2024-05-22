@@ -2,7 +2,7 @@
 
 layout: post
 
-title: 'Rest-like API Framework: Grape'
+title: "Rest-like API Framework: Grape"
 
 tags: rails ruby grape
 
