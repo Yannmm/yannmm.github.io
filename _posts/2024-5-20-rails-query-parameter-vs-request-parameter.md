@@ -2,7 +2,7 @@
 
 layout: post
 
-title: Rails: Query Parameter vs Request Parameter
+title: "Rails: Query Parameter vs Request Parameter"
 tags: rails ruby
 
 ---
