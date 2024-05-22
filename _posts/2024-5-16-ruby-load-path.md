@@ -3,6 +3,7 @@
 layout: post
 
 title: Ruby Load Path
+
 tags: rails ruby
 
 ---
