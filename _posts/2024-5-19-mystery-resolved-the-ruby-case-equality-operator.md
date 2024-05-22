@@ -2,7 +2,7 @@
 
 layout: post
 
-title: "Mystery Resolved: The Ruby "===" (Case Equality) Operator"
+title: "Mystery Resolved: The Ruby '===' (Case Equality) Operator"
 
 tags: rails ruby
 
