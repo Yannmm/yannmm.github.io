@@ -26,8 +26,20 @@ tags: ruby
 - Any reference beginning with an uppercase letter are Constants, including classes and modules. They are arranged  in a tree similar to the linux file system, where modules and classes are directories and constants are files. The constant path uses `::` as separator.
 
 - A leading `::` stands for root.
+
+
+- `Anonymous Module` means a module with no name assigned. It's used in [Kernel#load](https://docs.ruby-lang.org/en/master/Kernel.html#method-i-load). We can create one like this:
+
+    ```
+        anonymous_module = Module.new do 
+            def greeting
+                "Hello from another module"
+            end
+        end
+    ```
   
   
+- `include` a module will append that module after the including class in the `ancestors` chain; while `prepend` will insert that module before the including class in the chain.
 
 ### How
 
