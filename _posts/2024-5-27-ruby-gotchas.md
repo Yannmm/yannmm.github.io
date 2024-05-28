@@ -45,6 +45,8 @@ tags: ruby
 
 - [Module#refine](https://docs.ruby-lang.org/en/master/Module.html#method-i-refine) can add methods to existing module. What's more interesting, that change is not effective immediately. We need to call [Module#using](https://docs.ruby-lang.org/en/master/Module.html#method-i-using) to make it effective in current module / class context (or end of file if called at the top level). This is a good way to avoid global `Monkeypatching`. It has higher precedence thant open `class`.
 
+- Seems the actual method calling really matters in time (before/after) with when you can `using`.
+
 ### How
 
   
