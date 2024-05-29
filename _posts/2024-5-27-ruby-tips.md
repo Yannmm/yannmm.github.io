@@ -46,6 +46,10 @@ tags: ruby
 
 - Ruby's `Object Model` is fanscinating: both instance and class are all objects. class has `instance_methods` while `Class`'s instance_methods are called on class.
 
+- `Callable objects` include procs and lambdas. Blocks are convertible to them.
+
+- Just like method, a block returns the result of the last line of code it eveluates. Block vs Closure???
+
 ### How
 
   
