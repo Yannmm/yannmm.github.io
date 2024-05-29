@@ -44,6 +44,8 @@ tags: ruby
 
 - To define instance method, both `def` keyword and [Module#define_method](https://docs.ruby-lang.org/en/master/Module.html#method-i-define_method) serve the same purpose. But the latter let you determine the method name until runtime.
 
+- Ruby's `Object Model` is fanscinating: both instance and class are all objects. class has `instance_methods` while `Class`'s instance_methods are called on class.
+
 ### How
 
   
