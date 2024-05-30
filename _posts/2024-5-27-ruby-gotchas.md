@@ -47,6 +47,23 @@ tags: ruby
 
 - Seems the actual method calling really matters in time (before/after) with when you can `using`.
 
+- `class`, `module` and `def` are keywords indicating scope change. They are scope gate.
+
+- The `class` keyword does exactly the same this as `Class.new`.
+
+    ```
+    # Both are the same
+    class A1
+        def m1
+        end
+    end
+
+    A1 = Class.new do
+        def m1
+        end
+    end
+    ```
+
 ### How
 
   
