@@ -50,6 +50,26 @@ tags: ruby
 
 - Just like method, a block returns the result of the last line of code it eveluates. Block vs Closure???
 
+- All below methods turn a block into a `Proc`:
+
+    ```
+    p1 = Proc.new { |a, b| [a, b] }
+    p2 = lambda { |a, b| [a, b] }
+    p3 = ->(a, b) { [a, b] }
+    
+    def do_math(a, b, &op) // Turn block into proc
+        math(a, b, &op) // Turn proc into block
+    end
+    ```
+
+- `Proc` vs `Lambda`. a> `return`: lambda returns from its scope, behaves just like normal method; proc returns from the scope where itself is defined. b> `arity`: lambda is less tolerant than proc when it comes to arguments. Calling with wrong number of arguments will render lambda with `ArugmentError` while proc fits the argument list to its own expectations.
+
+
+- Seems `lambda` is more intuitive than procs because they're more similar to methods.
+
+
+- The `Callable Objects` family: 
+
 ### How
 
   
