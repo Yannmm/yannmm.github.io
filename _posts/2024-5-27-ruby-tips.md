@@ -62,13 +62,32 @@ tags: ruby
     end
     ```
 
-- `Proc` vs `Lambda`. a> `return`: lambda returns from its scope, behaves just like normal method; proc returns from the scope where itself is defined. b> `arity`: lambda is less tolerant than proc when it comes to arguments. Calling with wrong number of arguments will render lambda with `ArugmentError` while proc fits the argument list to its own expectations.
+- `Proc` vs `Lambda` 
+    - a> `return`: lambda returns from its scope, behaves just like normal method; proc returns from the scope where itself is defined. 
+    - b> `arity`: lambda is less tolerant than proc when it comes to arguments. Calling with wrong number of arguments will render lambda with `ArugmentError` while proc fits the argument list to its own expectations.
 
 
 - Seems `lambda` is more intuitive than procs because they're more similar to methods.
 
 
 - The `Callable Objects` family: 
+    - a> `Block`, not objects but callable. Evaluated in the scope where they are defined.
+    - b> `Proc`, object of class Proc, evaluated in the scope where they are defined.
+    - c> `lambda`, object of class Proc but subtly different from regular procs, evaluated in the scope where they are defined.
+    - d> `method`, bound to an object and evaluated in that object's scope.
+
+
+- `Domain Specific Language` focus on a specific problem domain. Ruby is a general-purposed-language, but it's easy to bend as an DSL. For example, Rails `respoind_to` method allow us to define response format in a DSL way. Magic! When implementing a DSL, we use `Callable Objects` as our building stones.
+
+- `current instance object (self)` and `current class object` are both kept referenced by Ruby. Like methods define with def keyword become instance methods of the current class.
+
+- In a class definition, current instance object and current class object are the same: class being defined.
+
+- `Class Variable` vs `Class Object Variable` are both variables belong to class object. But the former can be seen and changed by subclasses.
+
+- In `Duck Typing`, the "type" of an object is simply the set of methods to which an object can respond.
+
+- `Singleton Method`
 
 ### How
 
