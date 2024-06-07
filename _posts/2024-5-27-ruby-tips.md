@@ -87,7 +87,9 @@ tags: ruby
 
 - In `Duck Typing`, the "type" of an object is simply the set of methods to which an object can respond.
 
-- `Singleton Method`
+- `Singleton Method` and `Class Method` are the same thing: Method added to a single object, constant or self.
+
+- `Class Macro` looks like keywords, but are actually reguar class methods meant to be used in class definition.
 
 ### How
 
