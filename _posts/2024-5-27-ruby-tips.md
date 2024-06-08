@@ -91,7 +91,7 @@ tags: ruby
 
 - `Class Macro` looks like keywords, but are actually reguar class methods meant to be used in class definition.
 
-- `Class Methods` are actually methods lived in the class's singleton class. So there are three ways to define a class method:
+- `Class Methods` are actually methods lived in the class's singleton class. So there are four ways to define a class method:
   ```
   # a>
   def MyClass.a_class_method; end
@@ -105,6 +105,26 @@ tags: ruby
       def a_class_method; end
     end
   end
+  # d>
+  MyClass.instance_eval do
+    def a_class_method; end
+  end
+  ```
+
+- `Object extension` means extend an objet's singleton class, you can do it in two ways:
+
+  ```
+  module M1
+    def m1; 'hello'; end
+  end
+  obj = Object.new
+  
+  # a>
+  class << obj
+    include m1
+  end
+  # b>
+  obj.extend M1
   ```
 
 ### How
