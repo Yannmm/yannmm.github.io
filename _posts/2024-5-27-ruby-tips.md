@@ -91,6 +91,22 @@ tags: ruby
 
 - `Class Macro` looks like keywords, but are actually reguar class methods meant to be used in class definition.
 
+- `Class Methods` are actually methods lived in the class's singleton class. So there are three ways to define a class method:
+  ```
+  # a>
+  def MyClass.a_class_method; end
+  # b>
+  class MyClass
+    def self.a_class_method; end
+  end
+  # c>
+  class MyClass
+    class << self
+      def a_class_method; end
+    end
+  end
+  ```
+
 ### How
 
   
