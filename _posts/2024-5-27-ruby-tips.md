@@ -127,6 +127,8 @@ tags: ruby
   obj.extend M1
   ```
 
+- `Method Wrapper` is an action of reimplementing existing method with old implementation available at hand. There are three ways to do it: a> `method_alias`; b> `refine / using`; c> `prepend`.
+
 ### How
 
   
