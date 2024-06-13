@@ -129,8 +129,18 @@ tags: ruby
 
 - `Method Wrapper` is an action of reimplementing existing method with old implementation available at hand. There are three ways to do it: a> `method_alias`; b> `refine / using`; c> `prepend`.
 
-### How
+- `BasicObject#instance_eval` vs `Module#class_eval` vs `Kernel#eval`. All of them accept string of code or block of code. 
 
+- `Method Hooks` are class methods that will get called for particular events. Some examples are `Class#inherited`, `Module#included`, `BasicObject#singleton_method_added`. One common combo is to use `included` hook with `ClassMethods`, thus enable class methods are included.
+
+
+- A module's includer is sometimes called "the base class".
+
+- `Include-and-extend` is a common idiom to include both instance and class methods from a module. But it has a problem: For multi-level inclusion, only first level class methods inclusion works, because non-first level class methods are added into other module's singleton class, not the base includer.
+
+- `ActiveSupport::Concern` from Rails is minimal dependency management mechanism to handle nested module dependencies. 
+
+### How
   
   
   
