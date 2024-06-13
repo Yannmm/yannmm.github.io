@@ -140,6 +140,26 @@ tags: ruby
 
 - `ActiveSupport::Concern` from Rails is minimal dependency management mechanism to handle nested module dependencies. 
 
+
+- `Nil Guard` can be written as:
+  ```
+  a ||= []
+  # Equals to 
+  if defined?(a) && a
+    a
+  else
+    a = []
+  end
+  ```
+
+  - `Self Yield` means pass self to the given block:
+    ```
+      def tap
+        yield self if block_given?
+        self
+      end
+    ```
+
 ### How
   
   
