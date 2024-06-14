@@ -160,6 +160,14 @@ tags: ruby
       end
     ```
 
+- `Symbol#to_proc()` means converting a symbol to a proc with arguments automatically digested. This is very useful to replace one-line block, `&` operator is used to convert a proc to a block.
+  ```
+  names = ['bob', 'bill', 'sam']
+  names.map { |name| name.capitalize }
+  # Equals to
+  names.map(&:capitalize)
+  ```
+
 ### How
   
   
