@@ -2,7 +2,7 @@
 
 layout: post
 
-title: Ruby Tips
+title: "Reading Notes: Metaprogramming Ruby 2, Second Edition"
 
 tags: ruby
 
@@ -40,6 +40,29 @@ tags: ruby
   
   
 - `include` a module will append that module after the including class in the `ancestors` chain; while `prepend` will insert that module before the including class in the chain.
+
+- "One step right then up" is how Ruby try to locate a method in the ancestors chain. "One step right" means find the class of the instance; while "up" means trace up ancestors chain.
+
+- [Module#refine](https://docs.ruby-lang.org/en/master/Module.html#method-i-refine) can add methods to existing module. What's more interesting, that change is not effective immediately. We need to call [Module#using](https://docs.ruby-lang.org/en/master/Module.html#method-i-using) to make it effective in current module / class context (or end of file if called at the top level). This is a good way to avoid global `Monkeypatching`. It has higher precedence thant open `class`.
+
+- Seems the actual method calling really matters in time (before/after) with when you can `using`.
+
+- `class`, `module` and `def` are keywords indicating scope change. They are scope gate.
+
+- The `class` keyword does exactly the same this as `Class.new`.
+
+    ```
+    # Both are the same
+    class A1
+        def m1
+        end
+    end
+
+    A1 = Class.new do
+        def m1
+        end
+    end
+    ```
 
 
 - To define instance method, both `def` keyword and [Module#define_method](https://docs.ruby-lang.org/en/master/Module.html#method-i-define_method) serve the same purpose. But the latter let you determine the method name until runtime.
