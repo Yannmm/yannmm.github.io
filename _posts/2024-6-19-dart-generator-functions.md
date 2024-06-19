@@ -8,9 +8,9 @@ tags: rails ruby
 
 ### Why
 
-When you need to lazily produce a sequence of values, consider using a generator function. Dart supports both `synchronous` and `asynchronous` generators.
+For a sequence of values, When you need to produce each of them on demand, consider using a generator function. Dart supports both `synchronous` and `asynchronous` generators.
 
-`Lazily produce` means generating next value when requested. The request action can refer to calling [Iterator<E>.moveNext()](https://api.dart.dev/stable/3.4.4/dart-core/Iterator/moveNext.html) for synchronous geneartor, or consuming emitted values from stream by `await for` or `listen to`.
+`On demand` means generating next value when requested. The request action can refer to calling [Iterator<E>.moveNext()](https://api.dart.dev/stable/3.4.4/dart-core/Iterator/moveNext.html) for synchronous geneartor, or consuming emitted values from stream by `await for` or `listen to`.
 
 
 ### How
