@@ -73,8 +73,17 @@ tags: rails ruby
             };
             k2.func(); // k2
         ```
-    c> As a constructor: `new F1()`
-    d> Via the function's apply or call methods: `f1.call() / f1.apply()`
+    c> As a constructor, calling a function with keyword `new` will create a new empty object referenced by `this` and return the newly constructed object as the `new` operator's return value. (Explicit return value will be ignored if it's non-object.)
+        ```
+        function Ninja() {
+            this.shout = () => this;
+        }
+        let n1 = new Ninja();
+        ```
+
+    d> Via the function's apply or call methods, we can set `this` explicitly.
+    e> `arrow` functions inherit context from where it's defined.
+    f> `bind` method create a brand-new function with `this` set explicitly.
 
 ### How
 
@@ -88,3 +97,7 @@ tags: rails ruby
 
 
 ### Who
+
+
+
+
