@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dart Patterns
+title: Dart Pattern Matching
 tags: dart flutter
 ---
 
