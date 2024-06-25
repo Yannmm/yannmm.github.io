@@ -15,9 +15,10 @@ We can assume the application is always in certian state (which has correspondin
 Bloc is a state management design pattern, as well as a library.
 
 
+
 ### What
 
-**Cubit vs Bloc**
+Bloc pattern is good. But I think it's too academic to a real-world application. It limits developers' move. I prefer to emphasize on real-world applciation rather than red tape thing. So I'' pause learning this lib.
 
 
 
