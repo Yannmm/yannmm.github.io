@@ -85,6 +85,22 @@ tags: rails ruby
     e> `arrow` functions inherit context from where it's defined.
     f> `bind` method create a brand-new function with `this` set explicitly.
 
+
+- `Generator function` -> `iterator function`; resume / suspend. This is almost the same as `Dart Generator Function`.
+You can also pick up where `yield` is suspend by call `next` with argument. It will be used as return value of yield.
+The `next` method can supply value to the waiting `yield` expression, so if there is no yield expression waiting, there's nothing to supply the value to.
+
+A generator must be one of following state: a> idle, b> executing, c> suspended, d> complete
+
+Standard function can only be called anew. Each call creates a new execution context. But generator function's execution context is generated with the iterator and can be resume at will.
+
+Both `return` and no code left to execute will cause generator function move to completed state.
+
+
+
+- `Promise` is an placeholde for the result of an asynchronous task. It's either in **pending** or **resolved** state. 
+I guess `catch()` method will catch any error in a chain of promises.
+
 ### How
 
 
