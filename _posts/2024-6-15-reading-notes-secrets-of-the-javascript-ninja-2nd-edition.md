@@ -86,20 +86,123 @@ tags: rails ruby
     f> `bind` method create a brand-new function with `this` set explicitly.
 
 
-- `Generator function` -> `iterator function`; resume / suspend. This is almost the same as `Dart Generator Function`.
-You can also pick up where `yield` is suspend by call `next` with argument. It will be used as return value of yield.
-The `next` method can supply value to the waiting `yield` expression, so if there is no yield expression waiting, there's nothing to supply the value to.
 
-A generator must be one of following state: a> idle, b> executing, c> suspended, d> complete
-
-Standard function can only be called anew. Each call creates a new execution context. But generator function's execution context is generated with the iterator and can be resume at will.
-
-Both `return` and no code left to execute will cause generator function move to completed state.
 
 
 
 - `Promise` is an placeholde for the result of an asynchronous task. It's either in **pending** or **resolved** state. 
 I guess `catch()` method will catch any error in a chain of promises.
+
+- `async` function is actually a mix of `generators` and `promises`.
+
+
+- if a property can be found on the instance itself, the prototype isn't even consulted.
+
+promise to avoid callback hell.
+
+
+**Generators**
+
+`Generators` are able to produce multiple values, on a per request basis, suspending their execution between these requests. 
+
+One merit of generators is that its cntext is reserved and resumed between each execution. This creates an isolated environment.
+
+Another merit is allowing treat asynchronous code in synchronous way, since it emits one value at a time.
+
+One way to consume a sequence of generated values is using `for-of` loop:
+
+```
+function* g1() {
+    yield 'a'
+    yield 'b'
+    yield 'c'
+}
+
+for(let weapon of g1()) {
+    console.log(weapon)
+}
+```
+
+Making a call to a generator does not mean the body of generator function will be executed immediately. Instead, an iterator object is created.
+
+```
+function* g1() {
+    yield 'a'
+    yield 'b'
+    yield 'c'
+}
+
+const iterator = g2();
+
+iterator.next(); // a
+iterator.next(); // b
+iterator.next(); // c
+iterator.next(); // undefined
+
+```
+
+`next` and `yield` are zipped together and next always comes first. And, starting from the second next, you can provide arugment so it will serve as the return value of previous `yield`.
+
+```
+function* g3(name) {
+    const r1 = yield('good' + ' ' + name);
+    yield('bad' + ' ' + r1);
+}
+
+const iterator = g3('John');
+
+iterator.next('A'); // good John
+
+iterator.next('B'); // bad B
+```
+
+
+By using `yield*`, we yield (transfer control) to another generator.
+
+```
+function* g1() {
+    yield 'a';
+    yield 'b';
+    yield* g2();
+    yield 'c';
+}
+
+function* g2() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+```
+
+`throw` is used to pass error from inside and outside of a generator.
+
+```
+function *g4() {
+    try {
+        yield 123;
+        throw 'from inside'
+    } catch(e) {
+        cnsoel.log(e);
+    }
+}
+
+const iterator = g4();
+iterator.throw('from outside');
+```
+
+xxxxxxxxx
+
+A generator must be one of following state: a> idle, b> executing, c> suspended, d> complete
+
+- `Generator function` -> `iterator function`; resume / suspend. This is almost the same as `Dart Generator Function`.
+You can also pick up where `yield` is suspend by call `next` with argument. It will be used as return value of yield.
+The `next` method can supply value to the waiting `yield` expression, so if there is no yield expression waiting, there's nothing to supply the value to.
+
+
+
+
+
+Both `return` and no code left to execute will cause generator function move to completed state.
 
 ### How
 
