@@ -90,24 +90,17 @@ tags: rails ruby
 
 
 
-- `Promise` is an placeholde for the result of an asynchronous task. It's either in **pending** or **resolved** state. 
-I guess `catch()` method will catch any error in a chain of promises.
-
-- `async` function is actually a mix of `generators` and `promises`.
-
-
-- if a property can be found on the instance itself, the prototype isn't even consulted.
-
-promise to avoid callback hell.
 
 
 **Generators**
 
 `Generators` are able to produce multiple values, on a per request basis, suspending their execution between these requests. 
 
-One merit of generators is that its cntext is reserved and resumed between each execution. This creates an isolated environment.
+One merit is that its cntext is reserved and resumed between each execution. This creates an isolated environment.
 
-Another merit is allowing treat asynchronous code in synchronous way, since it emits one value at a time.
+Another merit is allowing treat asynchronous code in synchronous way, since it emits one value at a time. This means a generator must be one of following states: a> idle; b> executing; c> suspended; d> completed.
+
+Notice, `return` only ends the geneartor (in complete state), the value after return is not yielded.
 
 One way to consume a sequence of generated values is using `for-of` loop:
 
@@ -190,19 +183,69 @@ const iterator = g4();
 iterator.throw('from outside');
 ```
 
-xxxxxxxxx
+**Promises**
 
-A generator must be one of following state: a> idle, b> executing, c> suspended, d> complete
+A `Promise` is an placeholder for the result of an asynchronous task. It's either in **pending** or **resolved** state. 
 
-- `Generator function` -> `iterator function`; resume / suspend. This is almost the same as `Dart Generator Function`.
-You can also pick up where `yield` is suspend by call `next` with argument. It will be used as return value of yield.
-The `next` method can supply value to the waiting `yield` expression, so if there is no yield expression waiting, there's nothing to supply the value to.
+```
+const p1 = Promise((resolve, reject) => {
+    resolve('Good');
+    // Or
+    // reject('An error happened');
+});
+
+p1.then(result => { console.log('this is good.') }, err => { console.log('something bad happend') });
+```
+
+`catch()` method will catch any error produced in a chain of promises.
 
 
+`async` keyboard actually converts a function into a geneartor; while `await` mark wating for a promise to complete. 
 
 
+```
+// Raw implementation of async & await
+function async(generator) {
+    var iterator = generator();
 
-Both `return` and no code left to execute will cause generator function move to completed state.
+    function handle(result) {
+        if (result.done) { return; }
+        const value = result.value;
+
+        if (value instanceof Promise) {
+            value.then(r => handle(iterator.next(r))).catch(e => iterator.throw(e));
+        }
+    }
+
+    try {
+        handle(iterator.next());
+    } catch(e) {
+        iterator.throw(e);
+    }
+}
+
+// Usage
+async(function* () {
+    try {
+        const task1 = yield getTask1();
+        const task2 = yield getTask2();
+        const task3 = yield getTask3();
+    } catch(e) {
+        console.log(e);
+    }
+});
+
+// Using async and await keywords
+async function () {
+    try {
+        const task1 = yield getTask1();
+        const task2 = yield getTask2();
+        const task3 = yield getTask3();
+    } catch(e) {
+        console.log(e);
+    }
+}()
+```
 
 ### How
 
