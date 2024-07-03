@@ -249,6 +249,8 @@ async function () {
 
 **Object Oriented Programming**
 
+- js has this dynamic nature that is quite different C-like programming languages.
+
 ### How
 
 
