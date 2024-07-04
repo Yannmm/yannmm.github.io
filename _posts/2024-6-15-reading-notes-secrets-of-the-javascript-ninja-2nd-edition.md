@@ -247,9 +247,25 @@ async function () {
 }()
 ```
 
-**Object Oriented Programming**
+**Prototyping**
 
-- js has this dynamic nature that is quite different C-like programming languages.
+`prototype` is an object to whcih the search for a particular property can be delegated to. Every object has a prototype, which also has a prototype, forming a `prototype chain`.
+
+Every function has a [prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype) property. When the function is used as a constructor (instead as a "normal" function) with the `new` operator. It will become the new object's prototype.
+
+```
+function Tiger() {}
+Tiger.prototype.good = 31;
+const t1 = Tiger();
+assert(t1 === undefined, 't1 is undefined');
+const t2 = new Tiger();
+assert(t2 && t2.good === 31, 't2 is a Tiger');
+```
+
+It makes sense to place `instance methods` only on the function's prototype, since in that way we have a single method shared by all instances.
+
+
+todo: 7.2.3 Object typing via constructors
 
 ### How
 
