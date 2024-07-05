@@ -264,8 +264,83 @@ assert(t2 && t2.good === 31, 't2 is a Tiger');
 
 It makes sense to place `instance methods` only on the function's prototype, since in that way we have a single method shared by all instances.
 
+Every object has a `constructor` property referencing its original constructor function, which means we can use it to instantiate more same type objects.
 
-todo: 7.2.3 Object typing via constructors
+```
+const t1 = new Tiger();
+const t2 = new t1.constructor();
+```
+
+
+`instanceof` operator checks whether the prototype of the right-side function is in the prototype chain of the lef-side object.
+
+
+To achieve object-oriented-style inheritance, we need to tamper with constructor function's prototype and monkey-patch that prototype's constructor.
+
+```
+function Animal() {}
+function Tiger() {}
+Tiger.prototype = new Animal();
+
+Object.defineProperty(Tiger.prototype, "constructor", {
+    enumerable: false,
+    value: Tiger,
+    writable: true
+});
+
+var tiger = new Tiger();
+assert(tiger.constructor === Tiger, "tiger.constructor === Tiger");
+assert(tiger instanceof Animal, "tiger instanceof Animal");
+```
+
+A constructor's `prototype` is just like the `class object` in ruby. The constructor constructs a new instance, who maintains a reference to the prototype. The prototype maintains a reference to the constructor, which is used by `instanceof` operator.
+
+```
+instance(.__proto__)
+        |
+        V
+prototype(.constructor) ---
+        |                   ^
+        V                   |
+Constructor(.prototype) ---
+```
+
+The ES6 keyword `class` is based on the prototype inheritance implementation.
+
+```
+class Tiger {
+    constructor(name) {
+        this.name = name;
+        this.teeth = 30;
+    }
+
+    roar() {
+        console.log('awwww');
+    }
+
+    static fight(tiger1, tiger2) {
+        return tiger1.teeth - tiger2.teeth;
+    }
+}
+
+// Is equal to 
+
+function Tiger(name) {
+    this.name = name;
+    this.teeth = 30;
+}
+
+Tiger.prototype.roar = function() {
+    console.log('awwww');
+}
+
+Tiger.fight = function(tiger1, tiger2) {
+        return tiger1.teeth - tiger2.teeth;
+}
+```
+
+
+
 
 ### How
 
