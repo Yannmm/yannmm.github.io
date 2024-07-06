@@ -293,7 +293,7 @@ assert(tiger.constructor === Tiger, "tiger.constructor === Tiger");
 assert(tiger instanceof Animal, "tiger instanceof Animal");
 ```
 
-A constructor's `prototype` is just like the `class object` in ruby. The constructor constructs a new instance, who maintains a reference to the prototype. The prototype maintains a reference to the constructor, which is used by `instanceof` operator.
+A constructor itself acts like the `class object` in ruby. The constructor constructs a new instance, who maintains a reference to the prototype. The prototype maintains a reference to the constructor as well, which is used by `instanceof` operator.
 
 ```
 instance(.__proto__)
@@ -323,6 +323,17 @@ class Tiger {
     }
 }
 
+class ChinaTiger extends Tiger {
+    constructor(name, fur) {
+        super(name);
+        this.fur = fur;
+    }
+
+    smile() {
+        console.log('haha');
+    }
+}
+
 // Is equal to 
 
 function Tiger(name) {
@@ -337,6 +348,18 @@ Tiger.prototype.roar = function() {
 Tiger.fight = function(tiger1, tiger2) {
         return tiger1.teeth - tiger2.teeth;
 }
+
+function ChinaTiger(name, fur) {
+    this.fur = fur;
+    this.constructor.prototype.name = name;
+}
+ChinaTiger.prototype = new Tiger();
+
+Object.defineProperty(ChinaTiger.prototype, "constructor", {
+    enumerable: false,
+    value: ChinaTiger,
+    writable: true
+});
 ```
 
 
