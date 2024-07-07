@@ -362,7 +362,9 @@ Object.defineProperty(ChinaTiger.prototype, "constructor", {
 });
 ```
 
+**Access Control Redefined**
 
+`Object.defineProperty` allows defining private properties.
 
 
 ### How
