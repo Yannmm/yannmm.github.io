@@ -10,6 +10,7 @@ tags: rails ruby
 ### Why
 
 
+TODO: check private property in closure????
 
 
 ### What
@@ -364,7 +365,76 @@ Object.defineProperty(ChinaTiger.prototype, "constructor", {
 
 **Access Control Redefined**
 
-`Object.defineProperty` allows defining private properties.
+Define `getter` and `setter` methods by literals:
+
+```
+const list = {
+    colors: ['red', 'blue', 'green'],
+    get firstColor() {
+        return colors[0];
+    },
+    set firstColor(value) {
+        colors[0] = value;
+    }
+}
+
+assert(list.firstColor === 'red', 'The first color is red');
+
+list.firstColor = 'yellow';
+
+assert(list.firstColor === 'yellow', 'Now the first color is yellow');
+```
+
+Or using `Object.defineProperty` method:
+
+```
+function Tiger() {
+    let _teeth = 12; // Create a private property using closure.
+
+    Object.defineProperty(this, 'teeth', {
+        get: () => _teeth,
+        set: (value) => {
+            if (value < 0) {
+                throw new Error('Invalid number of teeth');
+            }
+            _teeth = value;
+        }
+    });
+}
+
+const t1 = new Tiger();
+t1.teeth = 10;
+assert(t1.teeth === 10, 't1.teeth === 10');
+
+try {
+    t1.teeth = -1;
+    assert(false, 't1.teeth = -1 should throw an error');
+} catch(e) {
+    assert(e.message === 'Invalid number of teeth', 'e.message === "Invalid number of teeth"');
+}
+```
+
+A `proxy` is a surrogate through which we control access to another object.
+
+```
+const emperor = { name: 'Komei' };
+const representative = new Proxy(emperor, {
+    get: (target, key) => {
+        return key in target ? target[key] : 'The emperor is too busy to meet you now';
+    },
+    set: (target, key, value) => {
+        target[key] = value;
+    }
+});
+
+console.log(representative.name); // Komei
+console.log(representative.age); // The emperor is too busy to meet you now
+representative.age = 16;
+console.log(representative.age); // 16
+
+```
+
+Handler functions, like "get" & "set", also called `traps`. Because they trap calls to the underlying target object.
 
 
 ### How
