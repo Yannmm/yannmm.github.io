@@ -27,13 +27,60 @@ TODO: check private property in closure????
 
 - Browser has an environment with `single-threaded` execution model. All events, whether coming from user or server, are queued up and processed one by one.
 
-- Functions are `first-class` objects in Javascript.
+**Functions**
 
-- Javascript Functins can even posess properties:
-    ```
-        var f = funciton() {};
-        f.name = "Hanzo";
-    ```
+Functions are `first-class` objects in Javascript. They can even posess properties:
+
+Like, adding tag to functions:
+```
+
+var store = {
+    next: 1,
+    cache: {},
+    add: function (fn) {
+        if (!fn.id) {
+            fn.id = this.next++;
+            this.cache[fn.id] = fn;
+            return fn.id;
+        }
+    }
+}
+
+function test() {}
+
+console.log(store.add(test)); // 1
+console.log(store.add(test)); // undefined
+
+// Remember results
+
+```
+
+Or serve as cache:
+```
+function isPrime(value) {
+    if (!isPrime.answers) {
+        isPrime.answers = {};
+    }
+
+    if (isPrime.answers[value] !== undefined) {
+        return isPrime.answers[value];
+    }
+
+    var prime = value !== 1;
+    for (var i = 2; i < value; i++) {
+        if (value % i === 0) {
+            prime = false;
+            break;
+        }
+    }
+    return isPrime.answers[value] = prime;
+}
+
+console.log(isPrime(5)); // true
+console.log(isPrime.answers[5]); // true, cached
+
+
+```
 
 - 4 ways to define functions in Javascript:
     a> Function declarations
