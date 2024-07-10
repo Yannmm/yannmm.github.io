@@ -120,46 +120,67 @@ function perform(ninja, action = 'walking') {
 }
 ```
 
+`arguments` is an array-like object accessible inside functions that contains the values of the arguments passed to that function.
 
+`this` refers to the context where a piece of code, such as a function's body, is supposed to execute.
 
-- `arguments` and `this` are two implicit function parameters.
+When invoked:
+As a function: `this` is either `window` (nonstrict mode) or `undefined` (strict mode):
+```
+    function f1() => this; 
+    function f2() { 'use strict'; return this; }
+                
+    f1(); // Window
+    f2(); // undefined
+```
 
-- `this` is affected by the way to invoke the function, when invoked:
-    a> As a function, `this` is either `window` (nonstrict mode) or `undefined` (strict mode):
-        ```
-            function f1() => this; 
-            function f2() { 'use strict'; return this; }
-            
-            f1(); // Window
-            f2(); // undefined
-        ```
-    b> As a method, `this` refers to owner of the function property:
-        ```
-            function f1() => this;
+As a method, `this` refers to owner of the function:
+```
+    function f1() => this;
 
-            f1(); // window
+    f1(); // window
 
-            let k1 = {
-                func: f1
-            };
-            k1.func(); // k1
+    let k1 = {
+        func: f1
+    };
+    k1.func(); // k1
 
-            let k2 = {
-                func: f1
-            };
-            k2.func(); // k2
-        ```
-    c> As a constructor, calling a function with keyword `new` will create a new empty object referenced by `this` and return the newly constructed object as the `new` operator's return value. (Explicit return value will be ignored if it's non-object.)
-        ```
-        function Ninja() {
-            this.shout = () => this;
-        }
-        let n1 = new Ninja();
-        ```
+    let k2 = {
+        func: f1
+    };
+    k2.func(); // k2
+```
 
-    d> Via the function's apply or call methods, we can set `this` explicitly.
-    e> `arrow` functions inherit context from where it's defined.
-    f> `bind` method create a brand-new function with `this` set explicitly.
+As a constructor, calling a function with keyword `new` will create a new empty object referenced by `this` and return the newly constructed object as the `new` operator's return value. (Explicit return value will be ignored if it's non-object.)
+```
+    function Ninja() {
+        this.shout = () => this;
+    }
+    let n1 = new Ninja();
+```
+
+Via the function's apply or call methods, `this` is set explicitly.
+```
+function juggle() {
+    var result = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        result += arguments[i];
+    }
+    this.result = result;
+}
+
+var ninja1 = {};
+
+juggle.apply(ninja1, [1, 2, 3, 4]);
+juggle.call(ninja1, 5, 6, 7, 8);
+```
+
+TODO: fixing the problem of function contexts
+
+`arrow` functions inherit context from where it's defined.
+
+`bind` method create a brand-new function with `this` set explicitly.
+
 
 
 
