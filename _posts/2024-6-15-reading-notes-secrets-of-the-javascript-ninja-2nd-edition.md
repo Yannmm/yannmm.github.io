@@ -82,17 +82,45 @@ console.log(isPrime.answers[5]); // true, cached
 
 ```
 
-- 4 ways to define functions in Javascript:
-    a> Function declarations
-    b> Function expressions
-    c> Arrow functions
-    d> Function constructors (obsolete)
-    e> Generator functions
+There are 4 ways to `define` a function:
+```
+// 1. Function declaration / expression
+function fun1() {
+    return 1;
+}
 
-- To immediately call to a function expression, using parentheses to signal to parser this is an expression, not a declaration:
-    ```
-    (function() {})(3);
-    ```
+// 2. Arrow function
+arg => arg * 2
+
+// 3. Function constructor
+new Function('a', 'b', 'return a + b')
+
+// 4. Generator
+function* gen() {
+    yield 1;
+}
+```
+
+Functions are tolerant with arguments, we can pass in more or less arguments than prameters.
+
+Use `...` to collect rest parameters:
+```
+function multiplyMax(first, ...rest) {
+    var sorted = rest.sort((a, b) => a - b);
+    return first * sorted[sorted.length - 1];
+}
+
+console.log(multiplyMax(3, 4, 5, 2, 1) === 15);
+```
+
+`Default` argument is supported as well:
+```
+function perform(ninja, action = 'walking') {
+    return ninja + " " + action;
+}
+```
+
+
 
 - `arguments` and `this` are two implicit function parameters.
 
