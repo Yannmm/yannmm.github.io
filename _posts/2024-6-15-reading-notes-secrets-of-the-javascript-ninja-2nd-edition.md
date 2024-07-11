@@ -197,7 +197,7 @@ const t1 = new Tiger();
 console.log(t1.teeth); // undefined
 ```
 
-TODO: keep track of type of identifiers with lexical environment.
+TODO: Closures are not finished. But they are language-specific. I'd like to drop. (2024.7.10)
 
 
 
