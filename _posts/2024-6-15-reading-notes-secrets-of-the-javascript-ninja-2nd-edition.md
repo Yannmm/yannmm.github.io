@@ -175,16 +175,29 @@ juggle.apply(ninja1, [1, 2, 3, 4]);
 juggle.call(ninja1, 5, 6, 7, 8);
 ```
 
-TODO: fixing the problem of function contexts
-
 `arrow` functions inherit context from where it's defined.
 
 `bind` method create a brand-new function with `this` set explicitly.
 
 
+**Closures**
 
+`Closure` is a "safety bubble" around the function and the variables in scope when the function is defined, so that it has everything to execute.
 
+Javascript does not support private variables natively. But we can achieve it via closures:
+```
+function Tiger() {
+    var teeth = 0;
+    this.getTeeth = function() {
+        return teeth;
+    }
+}
 
+const t1 = new Tiger();
+console.log(t1.teeth); // undefined
+```
+
+TODO: keep track of type of identifiers with lexical environment.
 
 
 
