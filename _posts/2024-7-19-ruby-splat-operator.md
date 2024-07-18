@@ -1,0 +1,1 @@
+https://thoughtbot.com/blog/ruby-splat-operator?utm_source=pocket_shared
