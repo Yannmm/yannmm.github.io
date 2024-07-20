@@ -29,7 +29,7 @@ A session can refer to one of two things:
 
 Generally, once a user logs in, the application stores his information in the session (the place). And use that information in subsequent request to make sure the user is valid and logged-in (the period).
 
-For rails, several store mechanisms are provided, you can store session data in any of them via a `unified` API.
+For rails, several store mechanisms are provided, you can store session data in any of them via a `unified` API. Notice, all of below options have the prerequisite of `Cookies` enabled on the browser, which stores `session_id`.
 
 -  `CookieStore`: Store all data inside a cookie, in addition to the session ID
 -  `CacheStore`: Store data inside the Rails cache
