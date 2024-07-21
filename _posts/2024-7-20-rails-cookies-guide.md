@@ -131,6 +131,14 @@ cookies.encrypted[:user_id]
 This is achieved by Rails not only sign the cookie but also encrypt it.
 
 
+### One More Thing
+
+To enable and access cookies in Rails, you need:
+
+1. Add `config.middleware.use ActionDispatch::Cookies` in `config/application.rb`.
+2. Add `include ActionController::Cookies` to the controller where you need to set cookies explicitly.
+
+
 
 ### References
 
