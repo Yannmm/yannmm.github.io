@@ -18,7 +18,7 @@ Bloc is a state management design pattern, as well as a library.
 
 ### What
 
-Bloc pattern is good. But I think it's too academic to a real-world application. It limits developers' move. I prefer to emphasize on real-world applciation rather than red tape thing. So I'' pause learning this lib.
+Bloc pattern is good. But I think it's too academic to a real-world application. It limits developers' move. I prefer to emphasize on real-world applciation rather than red tape thing. So I pause learning this lib.
 
 
 
