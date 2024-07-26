@@ -28,3 +28,4 @@ Test.perform(1, 2, 3)
 
 ```
 
+**Reference**: [Ruby splat operator 🌟](https://thoughtbot.com/blog/ruby-splat-operator?utm_source=pocket_shared)
