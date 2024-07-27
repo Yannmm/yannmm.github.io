@@ -18,6 +18,10 @@ There are three ways:
 
 If no response is set explicityly, then the view template with name corresponding to the action will be rendered. It means whenever you leave the action and no response is set, this mechanism will kick-in. E.g. when you early return from the action.
 
+### A Small Caveat of POST Action
+
+For actions that modifies data (like POST method), use `redirect` seems be to a best practice implemented by the framwork. This is something called `PRG` (post/redirect/get) pattern. It's anti-pattern to "render response", since browser will discard it. 
+
 ### What
 
   
