@@ -1,32 +1,22 @@
 ---
-
-  
-
 layout: post
-
-  
-
 title: Rails render & respond_to Method
-
-  
-
 tags: rails ruby
-
-  
-
 ---
 
-  
+TODO: move `respond_to` to another blog.
 
-  
+### ActionController
 
-### Why
+The essence of [ActionController::render](https://api.rubyonrails.org/classes/ActionController/Rendering.html#method-i-render) is "generating response".
 
-  
+There are three ways:
 
-  
+- Call `render` to create a full response anew.
+- Call `redirect_to` to send an 402 HTTP status code to the browser.
+- Call `head` to create a header-only HTTP response.
 
-  
+If no response is set explicityly, then the view template with name corresponding to the action will be rendered. It means whenever you leave the action and no response is set, this mechanism will kick-in. E.g. when you early return from the action.
 
 ### What
 
