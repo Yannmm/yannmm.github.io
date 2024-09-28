@@ -59,13 +59,19 @@ command -options arguments
 - `cp`: copy
   - cp item1 item2
   - cp item... directory
+  - `r`: required when copying directories
 - `mv`: move or rename
+  - mv item1 item2
+  - mv item... directory
 - `mkdir`: create dir
   - mkdir dir...
 - `rm`: remove
+  - `r`: required when deleting a directory
 - `ln`: create links
-  - hard inks: additional name(s) for same data part on disk (inode).
-  - symbolic links
+  - ln file link
+  - hard links: additional name(s) for same data part on disk (inode).
+  - ln -s item link
+  - symbolic links: text pointer to target file.
   - most file operations are carried out on the link's target, not the link itself. `rm` is an exception.
 
 **Wildcards**
