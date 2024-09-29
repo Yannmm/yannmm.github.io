@@ -144,3 +144,70 @@ Put more than one command on a line by separating each command with a semicolon 
 ```
 command1; command2; command3...
 ```
+
+### 6. I/O Redirection
+
+**Commands**
+
+- `cat`: concatenate and print files.
+- `sort`
+- `uniq`: report or filter out repeated lines in a file.
+- `grep`: print lines matching a pattern.
+  - `i`: ignore case
+  - `v`: print lines that do not match the pattern.
+- `wc`: word, line, character, and byte countq
+  - lines, words, bytes count
+- `head`: display the first 10 lines of a file.
+- `tail`: display the last 10 lines of a file.
+  - `n`: specify numbers, default is 10.
+  - `f`: don't stop when EOF is reached, but wait for additional data.
+- `tee`: duplicate standard input
+  - ls /usr/bin | tee ls.txt | grep zip
+
+
+To redirect standard output:
+
+- `>`: overwrite a file.
+  - ls /usr/bin > output.txt
+- `>>`: append to the end of a file.
+  - ls /usr/bin >> output.txt
+
+
+To redirect standard error:
+- `2>`:
+  - ls /usr/bin 2> output.txt
+- `2>>`:
+
+To redirect both standard output and error to the same file:
+
+- `&>`
+- `&>>`
+  - ls -l /bin/usr &>> ls-output.txt
+
+To supress error messages from a comand:
+
+- `/dev/null`
+  - ls -l /bin/usr 2> /dev/null
+
+In the absence of filename arguments, cat copies standard input to standard output. To create a short text file:
+
+```
+cat > some_file.txt
+This is the content of text file.(Ctrl-d, Ctrl-c)
+```
+
+**Pipelines**
+
+The standard output of one command can be `piped` into the standard input of another:
+
+```
+command1 | command2
+```
+
+- command1 `>` file: redirection operator connets a command with a file.
+- command1 `|` command2: pipeline operator connects t he output of one command with the input of a second command.
+
+
+
+(`l` seems a shortcut to `ls -lh`)
+
