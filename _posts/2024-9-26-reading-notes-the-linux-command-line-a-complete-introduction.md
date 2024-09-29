@@ -94,3 +94,53 @@ class |
 | [:upper:] | Matches any uppercase letter |
 
 
+# 5. Working with Commands
+
+**Commands**
+
+- `type`: display command type.
+- `which`: display executable's location.
+- `man`: display manual page.
+  - man ${section} ${search_term}
+- `whatis`: brief description of a command.
+- `alias`
+  - alias ${name}='string'
+  - use `unalias` command to remove.
+
+**Shell Command Type**
+
+1. An executable program.
+2. A shell built-in command.
+3. A shell function.
+4. An alias.
+
+**Help Notation**
+
+Square brackets indicates optional items; vertical bar indicates mutually exclusive items.
+
+```
+cd [-L|[-P[-e]]] [dir]
+```
+
+This notation says that the command cd may be followed optionally by either a “-L” or a “-P” and further, if the “-P” option is specified the “-e” option may also be included followed by the optional argument “dir”.
+
+
+**Man Page Organization**
+1. User commands
+2. Programming interfaces kernal system calls
+3. Programming interfaces to the C library
+4. Special files such as device nodes and drivers
+5. File formats
+6. Grames and amusements such as screen savers
+7. Miscellaneous
+8. System administration commands
+
+
+`bash` doc in `/usr/share/doc/bash/`.
+
+
+Put more than one command on a line by separating each command with a semicolon character.
+
+```
+command1; command2; command3...
+```
