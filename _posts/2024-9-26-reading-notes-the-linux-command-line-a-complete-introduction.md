@@ -40,6 +40,7 @@ Files are organized in a tree-like pattern of directories.
 - `ls`
   - `-l`
   - `-t`: sort by file's modification time.
+  - `-A`: list almost all hidden files.
 - `file`: determine file type.
 - `less`: view file contents.
   - `g`: to beginning
@@ -94,7 +95,7 @@ class |
 | [:upper:] | Matches any uppercase letter |
 
 
-# 5. Working with Commands
+### 5. Working with Commands
 
 **Commands**
 
@@ -211,3 +212,37 @@ command1 | command2
 
 (`l` seems a shortcut to `ls -lh`)
 
+
+### 7. Seeing the World as the Shell Sees It
+
+**Commands**
+
+- `echo`: write arguments to the standard output
+
+**Expansion**
+
+Use `echo` to print expanded argument(s).
+
+```
+echo *
+echo D*
+echo [[:upper:]]*
+echo /usr/*/share
+```
+
+- `~` (tilde exapnsion): expands to home directory.
+  - `~tom`: tom's home directory
+
+- `$((expression))`: arithmetic expansion
+  - echo $((2 + 2))
+
+- `{list or range}` (brace expansion):
+  - Number_{1..5}
+  - {01..015}
+  - a{A{1,2},B{3,4}}b
+
+- parameter expansion
+  - `$USER`
+
+- command substitution
+  - ls -l $(which cp)
