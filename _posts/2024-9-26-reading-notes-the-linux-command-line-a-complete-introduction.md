@@ -241,8 +241,17 @@ echo /usr/*/share
   - {01..015}
   - a{A{1,2},B{3,4}}b
 
-- parameter expansion
-  - `$USER`
+- `$PARAMETER`: parameter expansion
 
-- command substitution
+- `$(command)`: command substitution
   - ls -l $(which cp)
+
+**Quoting**
+
+- double quotes: supress part of expansions.
+unify a string with spaces and newlines into a single argument.
+  - echo "$(cal)"
+
+- single quotes: supress all expansions.
+
+- use `\` to escape special meaning characters, this is done in double quotes.
