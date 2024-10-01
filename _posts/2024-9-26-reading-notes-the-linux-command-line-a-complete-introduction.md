@@ -255,3 +255,29 @@ unify a string with spaces and newlines into a single argument.
 - single quotes: supress all expansions.
 
 - use `\` to escape special meaning characters, this is done in double quotes.
+
+
+### 8. Advanced Keyboard Tricks
+
+**Commands**
+
+- clear
+- history
+
+**Cursor Movement Commands**
+
+- `Ctrl-a`: to the beginning of line.
+- `Ctrl-e`: to the end of line.
+- `Ctrl-l`: clear the screen, same as `clear` command.
+- `Alt-f`: move forward one word.
+- `Alt-b`: move backward one word.
+
+**Modifying Text**
+
+- `Ctrl-d`: delete the character at the cursor location.
+
+**Cut & Paste**
+
+- `Ctrl-u`: kill the whole line.
+- `Ctrl-k`: kill text from the cursor location to the end of line.
+- `Ctrl-y`: yank text from the kill-ring and insert it at the cursor location.
