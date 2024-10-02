@@ -281,3 +281,15 @@ unify a string with spaces and newlines into a single argument.
 - `Ctrl-u`: kill the whole line.
 - `Ctrl-k`: kill text from the cursor location to the end of line.
 - `Ctrl-y`: yank text from the kill-ring and insert it at the cursor location.
+
+**History**
+
+- `history`: whole search
+  - `!number`: repeat list item number.
+
+- `ctrl-r`: incremental search
+
+- `script`: makes a typescript of everything printed on your terminal.
+
+
+### 9. Permissions
