@@ -293,3 +293,13 @@ unify a string with spaces and newlines into a single argument.
 
 
 ### 9. Permissions
+
+
+- `id`:
+- `chmod`:
+- `umask`:
+- `su`:
+- `sudo`:
+- `chown`:
+- `chgrp`:
+- `passwd`:
