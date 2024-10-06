@@ -295,7 +295,7 @@ unify a string with spaces and newlines into a single argument.
 ### 9. Permissions
 
 
-- `id`:
+- `id`: show user identity.
 - `chmod`:
 - `umask`:
 - `su`:
@@ -303,3 +303,11 @@ unify a string with spaces and newlines into a single argument.
 - `chown`:
 - `chgrp`:
 - `passwd`:
+
+**Owner, Group And Everybody Else**
+
+A user may own files and directories. Users can belong to a group who are given access to files and directories by their owners. Owner may also grant some set of access rights to everybody else.
+
+- `/etc/passwd`: where users defined.
+- `/etc/group`: where groupds defined.
+- `/etc/shadow`: where users' password defined.
