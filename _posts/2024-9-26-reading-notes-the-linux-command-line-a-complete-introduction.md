@@ -311,3 +311,51 @@ A user may own files and directories. Users can belong to a group who are given 
 - `/etc/passwd`: where users defined.
 - `/etc/group`: where groupds defined.
 - `/etc/shadow`: where users' password defined.
+
+**Read, Write and Execution Access**
+
+```
+-rw-rw-r-- 1 me me 0 2008-03-06 14:52 foo.txt
+```
+
+First 10 characters of above string is the `file attribute`.
+
+The first one is file type:
+
+- `-`: regular file.
+- `d`: directory.
+- `l`: symbolic link.
+- `c`: character special file, like terminal.
+- `b`: block special file, like a hard drive.
+
+Rest of them is `file mode`, representing the read, write and execute permissions for file's owner, group and everybody else.
+
+| Owner | Group | World |
+| -------- | ------- | ------- |
+| rwx | rwx | rwx |
+
+
+Permission Attributes:
+
+| Attribute | Files | Directories |
+| -------- | ------- | ------- |
+| r | Allows a file to be opened and
+read. | Allows a directory's contents to
+be listed if the execute attribute
+is also set. |
+| w | Allows a file to be written to or
+truncated, however this attribute
+does not allow files to be
+renamed or deleted. The ability
+to delete or rename files is
+determined by directory
+attributes. | Allows files within a directory
+to be created, deleted, and
+renamed if the execute attribute
+is also set. |
+| x | Allows a file to be treated as a
+program and executed. Program
+files written in scripting
+languages must also be set as
+readable to be executed. | Allows a directory to be
+entered, e.g., cd directory. |
