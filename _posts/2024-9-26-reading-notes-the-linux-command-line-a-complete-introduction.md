@@ -296,8 +296,10 @@ unify a string with spaces and newlines into a single argument.
 
 
 - `id`: show user identity.
-- `chmod`:
-- `umask`:
+- `chmod`: change permissions of a file or directory (owner or superuser).
+  - octal: `chmod 600 foo.txt`
+  - symbolic: `chmod u=rw,go-rwx`
+- `umask`: set default permissions.
 - `su`:
 - `sudo`:
 - `chown`:
@@ -339,23 +341,12 @@ Permission Attributes:
 
 | Attribute | Files | Directories |
 | -------- | ------- | ------- |
-| r | Allows a file to be opened and
-read. | Allows a directory's contents to
-be listed if the execute attribute
-is also set. |
-| w | Allows a file to be written to or
-truncated, however this attribute
-does not allow files to be
-renamed or deleted. The ability
-to delete or rename files is
-determined by directory
-attributes. | Allows files within a directory
-to be created, deleted, and
-renamed if the execute attribute
-is also set. |
-| x | Allows a file to be treated as a
-program and executed. Program
+| r | open and
+read. | list contents (x) |
+| w | write and truncate, but cannot be
+renamed or deleted. | files within can be created, deleted, and
+renamed (x) |
+| x | treated as a
+program and execute. for program
 files written in scripting
-languages must also be set as
-readable to be executed. | Allows a directory to be
-entered, e.g., cd directory. |
+languages (r) | enter into |
