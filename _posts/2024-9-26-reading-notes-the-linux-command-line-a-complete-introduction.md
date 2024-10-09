@@ -299,7 +299,7 @@ unify a string with spaces and newlines into a single argument.
 - `chmod`: change permissions of a file or directory (owner or superuser).
   - octal: `chmod 600 foo.txt`
   - symbolic: `chmod u=rw,go-rwx`
-- `umask`: set default permissions.
+- `umask`: remove default permissions.
 - `su`:
 - `sudo`:
 - `chown`:
@@ -350,3 +350,5 @@ renamed (x) |
 program and execute. for program
 files written in scripting
 languages (r) | enter into |
+| s (replace x) | setuid | setgid |
+| t | _ | sticky bit |
