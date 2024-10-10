@@ -300,8 +300,9 @@ unify a string with spaces and newlines into a single argument.
   - octal: `chmod 600 foo.txt`
   - symbolic: `chmod u=rw,go-rwx`
 - `umask`: remove default permissions.
-- `su`:
-- `sudo`:
+- `sudo`: execute a command as another user.
+  - `/etc/sudoers` file defines specific commands that particular users are permitted to execute.
+  - `sudo -l`: view privileges granted by sudo.
 - `chown`:
 - `chgrp`:
 - `passwd`:
