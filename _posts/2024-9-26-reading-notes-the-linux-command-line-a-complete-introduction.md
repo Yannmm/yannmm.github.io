@@ -303,7 +303,7 @@ unify a string with spaces and newlines into a single argument.
 - `sudo`: execute a command as another user.
   - `/etc/sudoers` file defines specific commands that particular users are permitted to execute.
   - `sudo -l`: view privileges granted by sudo.
-- `chown`:
+- `chown`: change file owner / group (superuser previleges required).
 - `chgrp`:
 - `passwd`:
 
