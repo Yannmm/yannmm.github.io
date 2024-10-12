@@ -304,8 +304,8 @@ unify a string with spaces and newlines into a single argument.
   - `/etc/sudoers` file defines specific commands that particular users are permitted to execute.
   - `sudo -l`: view privileges granted by sudo.
 - `chown`: change file owner / group (superuser previleges required).
-- `chgrp`:
-- `passwd`:
+- `passwd`: change password.
+  - `passwd [user]`
 
 **Owner, Group And Everybody Else**
 
