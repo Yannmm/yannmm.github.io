@@ -353,3 +353,52 @@ files written in scripting
 languages (r) | enter into |
 | s (replace x) | setuid | setgid |
 | t | _ | sticky bit |
+
+### 10. Processes
+
+Processes are how Linux organizes the different programs waiting for their turn at the CPU.
+
+- `ps`:
+  - `ps x`: shoow all of our processes regardless of any terminal they are controlled by.
+- `top`:
+- `jobs`:
+- `bg`:
+- `fg`:
+- `kill`:
+- `killall`:
+- `shutdown`:
+
+
+Processes have:
+
+- PID
+- memory assigned
+- owner
+- user ids
+- effective user ids
+
+**Process States**
+
+| State | Meaning |
+| -------- | ------- |
+| R | Running |
+| S | Sleeping |
+| s | Session leader |
+| D | Uninterruptible Sleep |
+| T | Stopped |
+| Z | A defunct or “zombie” process. |
+| < | A high priority process. |
+| N | A low priority process. |
+
+For `ps aux`, we have below column headers:
+
+| Header | Meaning |
+| -------- | ------- |
+| USER | User ID. This is the owner of the process. |
+| %CPU | CPU usage in percent. |
+| %MEM | Memory usage in percent. |
+| VSZ | Virtual memory size. |
+| RSS | Resident Set Size. The amount of physical memory (RAM) the
+process is using in kilobytes. |
+| START | Time when the process started. For values over 24 hours, a date is
+used. |
