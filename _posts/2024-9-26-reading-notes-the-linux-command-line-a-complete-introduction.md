@@ -360,7 +360,7 @@ Processes are how Linux organizes the different programs waiting for their turn 
 
 - `ps`:
   - `ps x`: shoow all of our processes regardless of any terminal they are controlled by.
-- `top`:
+- `top`: real-time sorted information about processes.
 - `jobs`:
 - `bg`:
 - `fg`:
@@ -402,3 +402,18 @@ For `ps aux`, we have below column headers:
 process is using in kilobytes. |
 | START | Time when the process started. For values over 24 hours, a date is
 used. |
+
+
+**Common Process Actions**
+
+- `Ctrl-c`: interrupt a process. (politely asked the program to terminate.)
+
+- Put in background: `command &`
+  - `[1] 91594`: job No.1, PID 91594
+  - `jobs`: list the jobs that have been launched.
+
+- Return to foreground: `fg %jobspec`
+  - If there is only 1 job, jobspec is optional.
+
+- Pause a process: `Ctrl-z`
+  - `fg %jobspec` or `bg %jobspec` a program to make it continue.
