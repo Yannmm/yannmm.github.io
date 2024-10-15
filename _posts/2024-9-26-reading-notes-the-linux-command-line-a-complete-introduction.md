@@ -364,7 +364,9 @@ Processes are how Linux organizes the different programs waiting for their turn 
 - `jobs`:
 - `bg`:
 - `fg`:
-- `kill`:
+- `kill`: terminate or signal a process.
+  - kill [-signal] PID...
+  - If not signal is specified on the commandline, then `TERM` (Terminate) signal is sent by default.
 - `killall`:
 - `shutdown`:
 
@@ -407,6 +409,7 @@ used. |
 **Common Process Actions**
 
 - `Ctrl-c`: interrupt a process. (politely asked the program to terminate.)
+  - `INT`: Interrupt signal.
 
 - Put in background: `command &`
   - `[1] 91594`: job No.1, PID 91594
@@ -417,3 +420,17 @@ used. |
 
 - Pause a process: `Ctrl-z`
   - `fg %jobspec` or `bg %jobspec` a program to make it continue.
+  - `TSTP`: Terminal Stop signal.
+
+
+  **Common Signals**
+
+| Number | Name | Meaning |
+| -------- | ------- | ------- |
+| 1 | HUP | Hangup |
+| 2 | INT | Interrupt |
+| 9 | KILL | Kill |
+| 15 | TERM | Terminate. This is the default signal sent by the
+kill command. |
+| 18 | CONT | Continue |
+| 19 | STOP | Stop |
