@@ -367,7 +367,9 @@ Processes are how Linux organizes the different programs waiting for their turn 
 - `kill`: terminate or signal a process.
   - kill [-signal] PID...
   - If not signal is specified on the commandline, then `TERM` (Terminate) signal is sent by default.
-- `killall`:
+  - `kill -INT 13061` = `kill -2 13061`
+- `killall`: kill processes by name
+  - killall [-u user] [-signal] name
 - `shutdown`:
 
 
@@ -425,12 +427,26 @@ used. |
 
   **Common Signals**
 
+Processes, like files, have owners. You must be the owner of a process (or the superuser) in order to send it signals with `kill` or `killall`.
+
 | Number | Name | Meaning |
 | -------- | ------- | ------- |
 | 1 | HUP | Hangup |
+| 3 | QUIT | Quit |
 | 2 | INT | Interrupt |
 | 9 | KILL | Kill |
+| 11 | SEGV | Segmentation Violation |
 | 15 | TERM | Terminate. This is the default signal sent by the
 kill command. |
 | 18 | CONT | Continue |
 | 19 | STOP | Stop |
+| 20 | TSTP | Terminal Stop |
+| 28 | WINCH | Window Change |
+
+
+### 11. The Environment
+
+- `printenv`
+- `set`
+- `export`
+- `alias`
