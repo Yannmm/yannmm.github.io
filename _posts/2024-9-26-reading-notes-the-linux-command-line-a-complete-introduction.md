@@ -446,7 +446,9 @@ kill command. |
 
 ### 11. The Environment
 
-- `printenv`
-- `set`
-- `export`
-- `alias`
+- `printenv`: show environment variables.
+- `set`: set environment, shell variables and shell functions.
+- `export`: export environment to subsequently executed programs.
+- `alias`: show all or create an alias for a command.
+
+There are  `shell variables` (bits of data placed there by bash) and `environment variables` (everything else).
