@@ -447,8 +447,46 @@ kill command. |
 ### 11. The Environment
 
 - `printenv`: show environment variables.
+  - `printenv USER` = `echo $USER`
 - `set`: set environment, shell variables and shell functions.
 - `export`: export environment to subsequently executed programs.
 - `alias`: show all or create an alias for a command.
 
 There are  `shell variables` (bits of data placed there by bash) and `environment variables` (everything else).
+
+
+**Some Interesting Variables**
+
+| Variable | Contents |
+| -------- | ------- |
+| SHELL | The name of your shell program. |
+| HOME | The pathname of your home directory. |
+| PAGER | The name of the program to be used for paging output. This is often
+set to /usr/bin/less. |
+| PATH | A colon-separated list of directories that are searched when you
+enter the name of a executable program. |
+| PWD | The current working directory. |
+| USER | Your username. |
+| TERM | The name of your terminal type. |
+
+
+**How Envrionment Is Established**
+
+When we log on to the system, the bash program starts, and reads a series of configuration scripts called startup files, which define the default environment shared by all users.
+
+For `login shell`:
+- /etc/profile
+- ~/.bash_profile, ~/.bash_login or ~/.profile
+
+For `non-login shell`:
+- ~/.bashrc
+
+
+The `PATH` variable is often set by the `/etc/profile` startup file and with this code:
+
+`PATH=$PATH:$HOME/bin`
+
+which means adding the directory $HOME/bin to the end of the list.
+
+`export PATH` means making the contents of PATH available to child
+processes of this shell.
