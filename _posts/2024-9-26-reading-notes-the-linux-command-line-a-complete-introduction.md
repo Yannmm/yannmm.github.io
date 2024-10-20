@@ -451,6 +451,7 @@ kill command. |
 - `set`: set environment, shell variables and shell functions.
 - `export`: export environment to subsequently executed programs.
 - `alias`: show all or create an alias for a command.
+- `source`: force bash to re-read `~/.bashrc` file, since it's only read at the beginning of a session.
 
 There are  `shell variables` (bits of data placed there by bash) and `environment variables` (everything else).
 
@@ -490,3 +491,8 @@ which means adding the directory $HOME/bin to the end of the list.
 
 `export PATH` means making the contents of PATH available to child
 processes of this shell.
+
+
+**Text Editor**
+
+`vim file_name`: If the file does not already exist, the editor will assume that you want to create a new file.
