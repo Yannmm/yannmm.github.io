@@ -496,3 +496,36 @@ processes of this shell.
 **Text Editor**
 
 `vim file_name`: If the file does not already exist, the editor will assume that you want to create a new file.
+
+
+### 12. A Gentle Introduction to VI
+
+- `:q`: exit
+- `:q!`: force to exit.
+
+
+- `command mode`
+- `insert mode` - i
+  - `Esc` to exit
+
+
+| Key | Cursor Movement in Command Mode |
+| -------- | ------- |
+| l | right |
+| h | left |
+| j | down |
+| k | up |
+| 0 | To the beginning of the current line. |
+| o | open a new line below the current line and switch to insert mode |
+| ^ | To the first non-whitespace character on the current
+line. |
+| $ | To the end of the current line. |
+| w | To the beginning of the next word or punctuation
+character. |
+| b | To the beginning of the previous word or punctuation
+character. |
+| Ctrl-f | down one page |
+| Ctrl-b | up one page |
+| G | To the last line of the file. |
+| numberG | To line number. For example, 1G moves to the first
+line of the file. |
