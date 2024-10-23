@@ -517,6 +517,7 @@ processes of this shell.
 | k | up |
 | 0 | To the beginning of the current line. |
 | o | open a new line below the current line and switch to insert mode |
+| O | open a new line above the current line and switch to insert mode |
 | A | Move the cursor to the end of the current line and switch to insert mode. |
 | ^ | To the first non-whitespace character on the current
 line. |
@@ -530,3 +531,9 @@ character. |
 | G | To the last line of the file. |
 | numberG | To line number. For example, 1G moves to the first
 line of the file. |
+| u | undo last change. |
+| x | delete one character. |
+| d+movement | cut specifiied range. |
+| y+movement | copy specifiied range. |
+| p | paste after the cursor. |
+| P | paste before. |
