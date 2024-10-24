@@ -515,6 +515,7 @@ processes of this shell.
 | h | left |
 | j | down |
 | k | up |
+| J | join current line with the one below it. |
 | 0 | To the beginning of the current line. |
 | o | open a new line below the current line and switch to insert mode |
 | O | open a new line above the current line and switch to insert mode |
@@ -537,3 +538,34 @@ line of the file. |
 | y+movement | copy specifiied range. |
 | p | paste after the cursor. |
 | P | paste before. |
+| f | search for a character within a line. (; to repeat) |
+| / | search within entire file. (n to repeat) |
+| : | starts an ex command |
+
+
+**Global Serach-And-Replace**
+
+for `:%s/Line/line/g`:
+
+| Item | Meaning |
+| -------- | ------- |
+| : | starts an ex command |
+| % | Specifies the range of lines for the operation. % is a shortcut
+meaning from the first line to the last line. |
+| s | Specifies the operation. In this case, substitution (search-and-
+replace). |
+| g | global. If
+omitted, only the first instance of the search string on each line
+is replaced. |
+
+with user confirmation, `:%s/line/Line/gc`:
+
+| Key | Action |
+| -------- | ------- |
+| y | Perform the substitution. |
+| n | Skip this instance of the pattern. |
+| a | Perform the substitution on this and all subsequent instances
+of the pattern. |
+| q | Quit substituting. |
+| l | Perform this substitution and then quit. |
+| Ctrl-e, Ctrl-y | Scroll down and scroll up, respectively. Useful for viewing the context of the proposed substitution. |
