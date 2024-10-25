@@ -569,3 +569,4 @@ of the pattern. |
 | q | Quit substituting. |
 | l | Perform this substitution and then quit. |
 | Ctrl-e, Ctrl-y | Scroll down and scroll up, respectively. Useful for viewing the context of the proposed substitution. |
+
