@@ -541,6 +541,10 @@ line of the file. |
 | f | search for a character within a line. (; to repeat) |
 | / | search within entire file. (n to repeat) |
 | : | starts an ex command |
+| :n / N | change file when multiple files are opended |
+| :buffers | view a list of files being edited. |
+| :r file_name | insert whole file into current position. |
+| ZZ | save current file and exit |
 
 
 **Global Serach-And-Replace**
@@ -570,3 +574,5 @@ of the pattern. |
 | l | Perform this substitution and then quit. |
 | Ctrl-e, Ctrl-y | Scroll down and scroll up, respectively. Useful for viewing the context of the proposed substitution. |
 
+
+### 13. Customizing the Prompt
