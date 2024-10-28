@@ -576,3 +576,22 @@ of the pattern. |
 
 
 ### 13. Customizing the Prompt
+
+Skip this chapter since it's not applicable to MacOS.
+
+### 14. Package Management
+
+Skip this chapter since it's not applicable to MacOS.
+
+### 15. Storage Media
+
+- `mount`
+- `unmount`
+- `fsck`
+- `fdisk`
+- `mkfs`
+- `fdformat`
+- `dd`
+- `genisoimage`
+- `wodim`
+- `md5sum`
