@@ -585,8 +585,8 @@ Skip this chapter since it's not applicable to MacOS.
 
 ### 15. Storage Media
 
-- `mount`
-- `unmount`
+- `mount`: attach a stroage device to the file system tree.
+- `umount`: Unmounting a device entails writing all the remaining data to the device so that it can be safely removed.
 - `fsck`
 - `fdisk`
 - `mkfs`
@@ -595,3 +595,22 @@ Skip this chapter since it's not applicable to MacOS.
 - `genisoimage`
 - `wodim`
 - `md5sum`
+
+
+A file named `/etc/fstab` lists the devices (typically hard disk partitions) that are to be mounted at boot time.
+
+**Fields**
+
+| Sequence | Field | Description |
+| -------- | ------- | ------- |
+| 1 | Device | device or partition to mount, you can use UUID, LABEL or Path to specify. |
+| 2 | Mount Point | The directory where the device is attached to the file system tree. Must be created first. |
+| 3 | File System Type | such as hfs, apfs, ntfs, ext4. |
+| 4 | Options | Mount options, often a comma-separated list. |
+| 5 | Dump | This field is used for backup utilities. It’s usually set to 0 for macOS, meaning no backups by the dump command. |
+| 6 | Pass | Determines the order in which filesystems are checked during boot by fsck. |
+
+
+Use `mount` without any arguments to view a list of devices.
+
+The format is: `device` on `mount_point` type `file_system_type` (`options`).
