@@ -160,6 +160,8 @@ command1; command2; command3...
   - lines, words, bytes count
 - `head`: display the first 10 lines of a file.
 - `tail`: display the last 10 lines of a file.
+  - `tail -f /var/log/system.log` to view the system logs.
+  - `log stream` will show a unified log on MacOS.
   - `n`: specify numbers, default is 10.
   - `f`: don't stop when EOF is reached, but wait for additional data.
 - `tee`: duplicate standard input
@@ -614,3 +616,13 @@ A file named `/etc/fstab` lists the devices (typically hard disk partitions) tha
 Use `mount` without any arguments to view a list of devices.
 
 The format is: `device` on `mount_point` type `file_system_type` (`options`).
+
+
+
+**Stop as Determining Device Names** since it's not quite relevant to MacOS.
+
+TBD
+
+
+### 16. Networking
+
