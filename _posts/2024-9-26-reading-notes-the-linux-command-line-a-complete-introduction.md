@@ -626,3 +626,20 @@ TBD
 
 ### 16. Networking
 
+- `ping`: send ICMP ECHO_REQUEST packets to network hosts.
+- `traceroute`: print the route packets take to network host.
+- `netstat`:
+- `ftp`:
+- `wget`:
+- `ssh`:
+
+
+`netstat -r`: show the kernel's network routing table:
+
+| Column | Description | Description |
+| -------- | ------- | ------- |
+| Destination | destination address for a route. | can be an IP address, hostname or a special designation. |
+| Gateway | next-hop address for the route. | The next-hop address for the route, indicating the IP address of the next device (typically a router) that data should be sent to on its way to the destination. |
+| Flags | Flags describe the characteristics of each route. | U: The route is “up” and currently active. G: The route uses a gateway. |
+| Netif | The name of the network interface used to reach the destination, such as en0 (Ethernet), en1 (Wi-Fi), or lo0 (loopback interface). |  |
+| Expire | For routes with time-limited entries (e.g., routes that will expire after a certain time), this shows the expiration time. If there is no expiration, this field might be blank. | |
