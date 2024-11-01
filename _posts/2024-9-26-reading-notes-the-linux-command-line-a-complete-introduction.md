@@ -643,3 +643,5 @@ TBD
 | Flags | Flags describe the characteristics of each route. | U: The route is “up” and currently active. G: The route uses a gateway. |
 | Netif | The name of the network interface used to reach the destination, such as en0 (Ethernet), en1 (Wi-Fi), or lo0 (loopback interface). |  |
 | Expire | For routes with time-limited entries (e.g., routes that will expire after a certain time), this shows the expiration time. If there is no expiration, this field might be blank. | |
+
+TBD
