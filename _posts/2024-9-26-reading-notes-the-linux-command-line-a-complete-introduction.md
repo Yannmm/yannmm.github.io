@@ -628,10 +628,12 @@ TBD
 
 - `ping`: send ICMP ECHO_REQUEST packets to network hosts.
 - `traceroute`: print the route packets take to network host.
-- `netstat`:
-- `ftp`:
-- `wget`:
-- `ssh`:
+- `netstat`: show network status.
+- `ftp`: can be replaced by `curl`
+- `wget`: can be replaced by `curl`
+- `ssh`: remote shell login.
+  - an encrypted tunnel is created between the local and remote systems.
+  - I can note down more ssh-related articles here in the future...
 
 
 `netstat -r`: show the kernel's network routing table:
@@ -644,4 +646,5 @@ TBD
 | Netif | The name of the network interface used to reach the destination, such as en0 (Ethernet), en1 (Wi-Fi), or lo0 (loopback interface). |  |
 | Expire | For routes with time-limited entries (e.g., routes that will expire after a certain time), this shows the expiration time. If there is no expiration, this field might be blank. | |
 
-TBD
+
+### 17. Searching for Files.
