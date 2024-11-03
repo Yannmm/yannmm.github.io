@@ -648,3 +648,24 @@ TBD
 
 
 ### 17. Searching for Files.
+
+- `locate`: find filenames quickly via a database called `/var/db/locate.database`.
+  - it has `tests` and `actions`.
+- `find`: recursively descends the directory tree of a file hierarchy, euvaluating an expression, which composed of the "primaries" and "operators" in terms of each file in the tree.
+- `xargs`:
+- `touch`:
+- `stat`:
+
+
+file types for `find`.
+
+| File Type | Description |
+| -------- | ------- |
+| b | block device |
+| c | character device |
+| d | directory |
+| f | regualar files |
+| l | symbolic link |
+
+`find ~ -type f -name "*.JPG" -size +1M`: find all the regular files that match the wildcard pattern “*.JPG” and are larger than one
+megabyte.
