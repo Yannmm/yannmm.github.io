@@ -652,6 +652,7 @@ TBD
 - `locate`: find filenames quickly via a database called `/var/db/locate.database`.
   - it has `tests` and `actions`.
 - `find`: recursively descends the directory tree of a file hierarchy, euvaluating an expression, which composed of the "primaries" and "operators" in terms of each file in the tree.
+  - `test` and `operator` order matters.
 - `xargs`:
 - `touch`:
 - `stat`:
@@ -669,3 +670,31 @@ file types for `find`.
 
 `find ~ -type f -name "*.JPG" -size +1M`: find all the regular files that match the wildcard pattern “*.JPG” and are larger than one
 megabyte.
+
+
+operators for `find`:
+
+| Operator | Description |
+| -------- | ------- |
+| -and | both sides of the operator are true. |
+| -or | either side of the operator is true. |
+| -not | following is false |
+| () | to group |
+
+eg: `find . (-type f -and -not -perm 0600) - or (-type d -not -perm 0700)`
+
+predefined actions for `find`:
+
+| Action | Description |
+| -------- | ------- |
+| -delete | delete matching file. |
+| -ls | Perform the equivalent of `ls -dils` on the matching file |
+| -print | print, the default action |
+| -quit | Quit once a match has been made. |
+
+user-defined action for `find`:
+
+- `-exec comand {} ;`
+- `-ok comand {} ;`, will prompt user before going on.
+
+`find . -type f -exec ls -l '{}' ';'`
