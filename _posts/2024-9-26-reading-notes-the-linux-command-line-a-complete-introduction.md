@@ -242,6 +242,8 @@ echo /usr/*/share
   - Number_{1..5}
   - {01..015}
   - a{A{1,2},B{3,4}}b
+  - `mkdir -p playground/dir-{001..100}`: create 100 directories
+  - `touch playground/dir-{001..100}/file-{A..Z}`: create 26 files under each directory
 
 - `$PARAMETER`: parameter expansion
 
@@ -653,9 +655,12 @@ TBD
   - it has `tests` and `actions`.
 - `find`: recursively descends the directory tree of a file hierarchy, euvaluating an expression, which composed of the "primaries" and "operators" in terms of each file in the tree.
   - `test` and `operator` order matters.
-- `xargs`:
-- `touch`:
-- `stat`:
+  - By changing the trailing semicolon character to a plus sign, we activate the ability of find to combine the results of the search into an argument list for a single execution of the desired command.
+  - 
+- `xargs`: build and execute command lines from standard input.
+  - `find . -type f | xargs ls -la`
+- `touch`: change file access and modification times
+- `stat`: display file status
 
 
 file types for `find`.
