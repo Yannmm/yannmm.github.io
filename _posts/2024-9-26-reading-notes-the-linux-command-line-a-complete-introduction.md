@@ -703,3 +703,21 @@ user-defined action for `find`:
 - `-ok comand {} ;`, will prompt user before going on.
 
 `find . -type f -exec ls -l '{}' ';'`
+
+
+### 18. Archiving and Backup
+
+
+**Compressing**
+
+Data compression is the process of removing redundancy from data. (Lossless / Lossy)
+
+- `gzip / gunzip`: compression/decompression tool
+  - will replace files.
+  - permission and timestamp reserved.
+  - `gunzip -c foo.txt | less`: peep into the file content of a gz file (`zless` works as well.)
+- `bzip2`:
+
+**Archiving**
+- `tar`:
+- `zip`:
