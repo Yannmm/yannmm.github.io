@@ -710,14 +710,23 @@ user-defined action for `find`:
 
 **Compressing**
 
+Note: if you compress a file that is already compressed, you end up a larger file. so don't do that.
+
 Data compression is the process of removing redundancy from data. (Lossless / Lossy)
 
 - `gzip / gunzip`: compression/decompression tool
   - will replace files.
   - permission and timestamp reserved.
   - `gunzip -c foo.txt | less`: peep into the file content of a gz file (`zless` works as well.)
-- `bzip2`:
+- `bzip2`: is similar to gzip, but uses a different compres- sion algorithm that achieves higher levels of compression at the cost of compression speed.
 
 **Archiving**
-- `tar`:
+
+the process of gathering up many files and bundling them together into a single large file
+
+
+- `tar`: manipulate tape archives
+  - `tar mode[options] pathname`
+  - `.tar` file: plain tar archive.
+  - `.tgz` file: gzipped archive.
 - `zip`:
