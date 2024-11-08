@@ -729,4 +729,11 @@ the process of gathering up many files and bundling them together into a single 
   - `tar mode[options] pathname`
   - `.tar` file: plain tar archive.
   - `.tgz` file: gzipped archive.
-- `zip`:
+
+
+- `zip`: package and compress (archive) files (both compressing and archiving) 
+  - `unzip -l xx.zip`: list files in the zip.
+
+- `rsync`: skip.
+
+### 19. Regular Expressions
