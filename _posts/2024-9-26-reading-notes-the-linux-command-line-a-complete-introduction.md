@@ -737,3 +737,14 @@ the process of gathering up many files and bundling them together into a single 
 - `rsync`: skip.
 
 ### 19. Regular Expressions
+
+- `grep`: Global Regular Expression Print
+
+
+
+**Metacharacters**  ^ $ . [ ] { } - ? * + ( ) | \
+- `.`: any character.
+- anchors
+  - `^`: beginning of the line.
+  - `$`: end of the line.
+  - `^$`: will match blank lines.
