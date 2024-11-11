@@ -748,3 +748,13 @@ the process of gathering up many files and bundling them together into a single 
   - `^`: beginning of the line.
   - `$`: end of the line.
   - `^$`: will match blank lines.
+  - `[]`: match a single character from a specified set of characters within.
+    - `netagion`: If the first character in a bracket expression is a caret (^), the remaining characters are taken to be a set of characters that must not be present at the given character position.
+      - `[^bg]zip`: any charcter except b or g.
+      - caret character only works if it's the first character within the bracket. Otherwise, it's just an ordinary character.
+      - `[A-Z]`
+      - `[a-z]`
+      - `[0-9]`
+      - `[A-Za-z0-9]`
+      - make `-` the first character to treat it as ordinary character.
+
