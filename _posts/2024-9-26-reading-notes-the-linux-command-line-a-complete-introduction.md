@@ -742,6 +742,7 @@ the process of gathering up many files and bundling them together into a single 
 
 
 
+<<<<<<< HEAD
 **Metacharacters**  ^ $ . [ ] { } - ? * + ( ) | \
 - `.`: any character.
 - anchors
@@ -758,3 +759,18 @@ the process of gathering up many files and bundling them together into a single 
       - `[A-Za-z0-9]`
       - make `-` the first character to treat it as ordinary character.
 
+=======
+**Anchors**
+- `^`: start of string.
+- `$`: end of string.
+- `\b`: word boundary.
+
+
+**Flags/Modifiers**
+- `i`: case-insensitive match is performed.
+- `g`: global mode, not stop after first match is found.
+
+
+**Group Constructs**
+- `(?!...)`: negative lookahead, starting at the current position in the expression, ensures that the given pattern will not match.
+>>>>>>> 94567ee (learning regex)
