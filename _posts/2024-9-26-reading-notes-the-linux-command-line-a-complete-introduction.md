@@ -747,11 +747,31 @@ the process of gathering up many files and bundling them together into a single 
 - `$`: end of string.
 - `\b`: word boundary.
 
+**Quantifiers**
+
+- `a?`: zero or one of a.
+- `a*`: zero or more of a.
+- `a+`: one or more of a.
+- `a{3}`: exactly 3 of a.
+- `a{3,}`: 3 or more of a.
+
 
 **Flags/Modifiers**
 - `i`: case-insensitive match is performed.
 - `g`: global mode, not stop after first match is found.
+  - `/this/g`
 
 
 **Group Constructs**
 - `(?!...)`: negative lookahead, starting at the current position in the expression, ensures that the given pattern will not match.
+- `(...)`: capturing group, IDs start at 1.
+- `(?:...)`: non-capturing group.
+
+
+**Back-references**
+
+
+
+**References**
+
+- [RegexBuddy](https://www.regular-expressions.info/tutorial.html)
