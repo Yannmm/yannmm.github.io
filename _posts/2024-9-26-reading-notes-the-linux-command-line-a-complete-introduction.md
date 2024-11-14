@@ -740,6 +740,9 @@ the process of gathering up many files and bundling them together into a single 
 
 - `grep`: Global Regular Expression Print
 
+**Meta Sequences**
+
+- `\w`: any word character, equivalent to [a-zA-z0-9].
 
 
 **Anchors**
@@ -755,6 +758,9 @@ the process of gathering up many files and bundling them together into a single 
 - `a{3}`: exactly 3 of a.
 - `a{3,}`: 3 or more of a.
 
+- `greedy`: match as much as possible.
+- `lazy`: match as few as possible.
+
 
 **Flags/Modifiers**
 - `i`: case-insensitive match is performed.
@@ -765,7 +771,7 @@ the process of gathering up many files and bundling them together into a single 
 **Group Constructs**
 - `(?!...)`: negative lookahead, starting at the current position in the expression, ensures that the given pattern will not match.
 - `(...)`: capturing group, IDs start at 1.
-- `(?:...)`: non-capturing group.
+- `(?:...)`: non-capturing group.c cx
 
 
 **Back-references**
