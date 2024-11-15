@@ -740,9 +740,21 @@ the process of gathering up many files and bundling them together into a single 
 
 - `grep`: Global Regular Expression Print
 
+
 **Meta Sequences**
 
-- `\w`: any word character, equivalent to [a-zA-z0-9].
+- `\w`: any word character, equivalent to [a-zA-z0-9_]. notice: including `_`.
+- `\W`: opposite to `\w`.
+- `\d`: match numbers.
+- `\D`: opposite to `\d`.
+- `\s`: any whitespace character.
+- `\S`: opposite to `\s`.
+- `{ } [ ] / \ + * . $^ | ?`: special characters, use `\` if means literal.
+
+**Alternation**
+
+- `[]`: character level.
+- `|`: expression level.
 
 
 **Anchors**
@@ -751,15 +763,15 @@ the process of gathering up many files and bundling them together into a single 
 - `\b`: word boundary.
 
 **Quantifiers**
-
+- `.`: matches any character other than newline.
 - `a?`: zero or one of a.
 - `a*`: zero or more of a.
 - `a+`: one or more of a.
 - `a{3}`: exactly 3 of a.
 - `a{3,}`: 3 or more of a.
 
-- `greedy`: match as much as possible.
-- `lazy`: match as few as possible.
+- `greedy`: default, match as much as possible.
+- `lazy`: `?`, match as few as possible.
 
 
 **Flags/Modifiers**
@@ -771,13 +783,24 @@ the process of gathering up many files and bundling them together into a single 
 **Group Constructs**
 - `(?!...)`: negative lookahead, starting at the current position in the expression, ensures that the given pattern will not match.
 - `(...)`: capturing group, IDs start at 1.
-- `(?:...)`: non-capturing group.c cx
+- `(?:...)`: non-capturing group.
+
+**Lookaround**
+- `(?=)`: positive lookahead. `\d+(?=PM)`
+- `(?!)`: negative lookahead. `\d+(?!PM)`
+
+- `(?<=)`: positive lookbehind. `(?<=\$)\d+`
+- `(?<!)`: negative lookbehind. `(?<!\$)\d+`
 
 
-**Back-references**
+- `backreference`:  refer to using the results of a capture later in code.
+- `backtracing`: refers to start over when a match fails.
+
+
 
 
 
 **References**
 
 - [RegexBuddy](https://www.regular-expressions.info/tutorial.html)
+
