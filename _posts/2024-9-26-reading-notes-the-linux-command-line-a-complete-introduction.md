@@ -804,3 +804,8 @@ the process of gathering up many files and bundling them together into a single 
 
 - [RegexBuddy](https://www.regular-expressions.info/tutorial.html)
 
+
+
+# TBD: 
+
+from today (2024.11.16), i'll force myself to learn vim as text eidtor.
