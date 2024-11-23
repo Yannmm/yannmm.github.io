@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Relocate the Nix Store To An External Drive
+title: Relocate the Nix Store to An External Drive
 tags: rails postgresql
 ---
 
