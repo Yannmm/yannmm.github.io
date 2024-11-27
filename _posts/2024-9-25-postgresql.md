@@ -29,6 +29,4 @@ TBD
 
 **References**:
 
-- [Nix Language Basics](https://nix.dev/tutorials/nix-language)
-
-- ['nix shell' vs 'nix develop'](https://www.reddit.com/r/NixOS/comments/r15hx4/nix_shell_vs_nix_develop/)
+- psql tutorial: https://www.postgresql.org/docs/current/tutorial.html
