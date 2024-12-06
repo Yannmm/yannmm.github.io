@@ -1,28 +1,17 @@
 ---
 layout: post
-title: Flutter Trees
+title: Widget, Element and RenderObject
 tags: flutter frontend
 ---
 
 
-### Why
+- [Widget](https://api.flutter.dev/flutter/widgets/Widget-class.html) - Immutable blueprint of a part of interface.
+  - Able to inflate an Element.
 
-Flutter's three trees seem to be a key to understand lifecycle of widgets.
+- [Element](https://api.flutter.dev/flutter/widgets/Element-class.html) - The use of a widget at a specific location of user interface.
+  - Elements form a tree.
+  - The widget associated with an element can change.
 
-
-### What
-
-
-
-### How
-
-
-
-### Where
-
-
-### When
-
-
-
-### Who
+- [RenderObject](https://api.flutter.dev/flutter/rendering/RenderObject-class.html) - Handle sizing, laying out, paiting and hit-testing.
+  - RenderObjects form a tree as well.
+  - Deal with rendering close to the metal.
