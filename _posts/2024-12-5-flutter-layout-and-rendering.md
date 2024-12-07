@@ -1,8 +1,11 @@
 ---
 layout: post
-title: Widget, Element and RenderObject
+title: Flutter Layout and Rendering
 tags: flutter frontend
 ---
+
+
+TODO: In this article, I'll walk through how flutter rendering pipeline works by reading source code.
 
 
 - [Widget](https://api.flutter.dev/flutter/widgets/Widget-class.html) - Immutable blueprint of a part of interface.
