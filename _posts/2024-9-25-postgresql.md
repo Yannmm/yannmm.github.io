@@ -4,6 +4,20 @@ title: PostgreSQL
 tags: rails postgresql
 ---
 
+### PostgreSQL Server Applications
+
+- `postgres`: PostgreSQL database server.
+  - The postgres server application itself.
+- `pg_ctl`:  initialize, start, stop, or control a PostgreSQL server.
+  - pg_ctl is a utility for initializing a PostgreSQL database cluster, starting, stopping, or restarting the PostgreSQL database server (postgres), or displaying the status of a running server.
+- `initdb`: create a new  PostgreSQL database cluster.
+  - A database cluster is a collection of databases that is stored at a common file system location (the “data area”). More than one postgres instance can run on a system at one time, so long as they use different data areas and different communication ports. When postgres starts it needs to know the location of the data area. The location must be specified by the -D option or the PGDATA environment variable; there is no default.
+
+**Environment**
+
+- PGDATA: Default data directory location.
+- PGPORT: Default port number.
+
 
 ### Why
 
@@ -35,3 +49,5 @@ TBD
 **References**:
 
 - psql tutorial: https://www.postgresql.org/docs/current/tutorial.html
+
+- [PostgreSQL Server Applications](https://www.postgresql.org/docs/current/reference-server.html)
