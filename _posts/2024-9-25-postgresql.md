@@ -18,6 +18,20 @@ tags: rails postgresql
 - PGDATA: Default data directory location.
 - PGPORT: Default port number.
 
+### PostgreSQL Client Applications
+
+- `psql`: PostgreSQL interactive terminal.
+
+**General Commands**
+
+- `\?`: show general help.
+- `\l`: list databases.
+- `\d`: list tables, views, and sequences.
+
+**SQL Commands**
+
+- `\h`: show sql commands.
+
 
 ### Why
 
@@ -51,3 +65,5 @@ TBD
 - psql tutorial: https://www.postgresql.org/docs/current/tutorial.html
 
 - [PostgreSQL Server Applications](https://www.postgresql.org/docs/current/reference-server.html)
+- [PostgreSQL Data Types](https://www.postgresql.org/docs/17/datatype.html)
+- [Mockagroo](https://www.mockaroo.com)
