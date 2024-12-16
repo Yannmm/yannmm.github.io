@@ -32,6 +32,25 @@ tags: rails postgresql
 
 - `\h`: show sql commands.
 
+- SELECT
+- ORDER BY
+- WHERE
+
+- LIMIT
+- OFFSET: `SELECT * FROM person OFFSET 5 FETCH FIRST 5 ROW ONLY;`
+
+- IN
+
+- BETWEEN: `SELECT * FROM person WHERE date_of_birth BETWEEN DATE '2000-01-01' AND '2015-01-01';`
+
+- LIKE: `SELECT * FROM person WHERE email LIKE '%___a@%';`
+
+- GROUP BY: `SELECT country_of_birth, COUNT(country_of_birth) FROM person GROUP BY country_of_birth;`
+
+- GROUP BY HAVING: `SELECT country_of_birth, COUNT(country_of_birth) FROM person GROUP BY country_of_birth HAVING COUNT(*) > 5 ORDER BY country_of_birth;`
+
+- [Aggregate Functions](https://www.postgresql.org/docs/17/functions-aggregate.html)
+
 
 ### Why
 
