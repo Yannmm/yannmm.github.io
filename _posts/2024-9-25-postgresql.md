@@ -49,7 +49,8 @@ tags: rails postgresql
 
 - GROUP BY HAVING: `SELECT country_of_birth, COUNT(country_of_birth) FROM person GROUP BY country_of_birth HAVING COUNT(*) > 5 ORDER BY country_of_birth;`
 
-- [Aggregate Functions](https://www.postgresql.org/docs/17/functions-aggregate.html)
+- [Aggregate Functions](https://www.postgresql.org/docs/17/functions-aggregate.html): Aggregate functions compute a single result from a set of input values.
+
 
 
 ### Why
