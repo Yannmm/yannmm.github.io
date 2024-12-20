@@ -52,6 +52,7 @@ tags: rails postgresql
 - [Aggregate Functions](https://www.postgresql.org/docs/17/functions-aggregate.html): Aggregate functions compute a single result from a set of input values.
 
 
+Sorry I go awry with Calibre, will focus on posgresql again.
 
 ### Why
 
