@@ -4,6 +4,27 @@ title: PostgreSQL
 tags: rails postgresql
 ---
 
+> Learn PostgresSQL knowledge bit by bit according to this [roadmap](https://roadmap.sh/postgresql-dba).
+
+
+# Introcution
+
+**What are Relational Databases?**
+
+> A relational database organizes data into rows and columns, which collectively from a table where the data points are related to each other.
+
+> Data is typically structured across multiple tables, which can be joined together via a primary key or a foreign key. These unique identifiers demonstrate the differrent relationships which exist between tables, and these relationships are usually illustrated through differernt types of data models.
+
+**RDBMS Benefits and Limitations**
+
+> RDBMS offer serveral benefits, including robust data integrity through ACID compliance, powerful querying capabilities, and strong support for data relationship via foreign keys and joins. They are highly scalable vertically(add more power to a machine) and can handle complex transactions reliably. However, RDBMS also have limitations such as difficulties in horizontal scaling (add more machines), which hinders performance in highly distributed systems. They are also less flexible with schema schanges, often requiring significant effort to modify existing structures, and may not be the best fit for unstructured data aor lar-scale, high-velocity data environments typical of some NoSQL solutions.
+
+# RDBMS Concepts
+
+## Object Model in PostgreSQL
+
+> object-oriented models
+
 ### PostgreSQL Server Applications
 
 - `postgres`: PostgreSQL database server.
