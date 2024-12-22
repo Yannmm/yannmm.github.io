@@ -19,11 +19,57 @@ tags: rails postgresql
 
 > RDBMS offer serveral benefits, including robust data integrity through ACID compliance, powerful querying capabilities, and strong support for data relationship via foreign keys and joins. They are highly scalable vertically(add more power to a machine) and can handle complex transactions reliably. However, RDBMS also have limitations such as difficulties in horizontal scaling (add more machines), which hinders performance in highly distributed systems. They are also less flexible with schema schanges, often requiring significant effort to modify existing structures, and may not be the best fit for unstructured data aor lar-scale, high-velocity data environments typical of some NoSQL solutions.
 
-# RDBMS Concepts
+# Basic RDBMS Concepts
 
 ## Object Model in PostgreSQL
 
-> object-oriented models
+> PostgreSQL is an object-relational database management system (ORDBMS). It complies to SQL standard as well as providing object-oriented features:
+
+- SQL standard:
+  - complex queries;
+  - foreign keys;
+  - triggers;
+  - updatable views;
+  - transactional integrity;
+  - multiversion concurrency control.
+
+- Object-oriented features:
+   - data types;
+   - functions;
+   - operators;
+   - aggregate functions;
+   - index methods;
+   - procedural languages.
+
+
+
+| Components | Desc |
+| -------- | ------- |
+| cluster  | a collection of databases that is managed by a single instance of a running database server. |
+| database | a database is a named collection of tables, indexes, views, stored procedures, and other database objects. |
+| schema    | the implementation in postgres of the namespace concept. |
+| table    | organizes data into rows and columns, where each column has a specific data type, and each row represents a single record. It serves as the primary structure for storing and managing relational data. |
+| row    | a horizontal group of related data within a table |
+| column    | a column is a vertical structure in a table that represents a single attribute or field of the data stored in the table. |
+| date type | a general pattern for data the column accepts and stores. |
+
+
+## High-level Database Concepts
+
+**ACID**
+
+- `Atomicity`: a transaction is treated as a single, indivisible unit.
+- `Consistency`: a transaction takes the database from one valid state to another, maintaining all defined rules (e.g., constraints, triggers).
+- `Isolation`: concurrently executed transactions do not interfere with each other.
+- `Durability`: once a transaction is committed, its changes are permanent, even in the case of a system failure.
+
+**MVCC**
+
+> A method used by databases like PostgreSQL to handle concurrent access to the database without locking the rows in a way that would block other users. It allows multiple transactions to read and write data simultaneously, ensuring consistency and performance.
+
+**Transactions**
+
+> The essential point of a transaction is that it bundles multiple steps into a single, all-or-nothing operation. The intermediate states between the steps are not visible to other concurrent transactions, and if some failure occurs that prevents the transaction from completing, then none of the steps affect the database at all.
 
 ### PostgreSQL Server Applications
 
