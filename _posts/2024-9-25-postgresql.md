@@ -71,6 +71,24 @@ tags: rails postgresql
 
 > The essential point of a transaction is that it bundles multiple steps into a single, all-or-nothing operation. The intermediate states between the steps are not visible to other concurrent transactions, and if some failure occurs that prevents the transaction from completing, then none of the steps affect the database at all.
 
+## Relational Model
+
+> organizes data into tables with rows and columns, where each row represents a single record and each column represents an attribute or field of the record.
+
+-`relation`: aka table, represents a single entity or concept.
+-`tuple`: aka row, represents a single instance or record in the table.
+-`attribute`: aka column, rpresents a property or characteristic of the entity.
+-`domain`: the set of valid values for a column.
+-`constraint`: 
+  - primary key
+  - foreign key
+  - uniqe
+  - not null
+  - check
+  - default
+  - index
+-`NULL`: represents missing or unknown information.
+
 ### PostgreSQL Server Applications
 
 - `postgres`: PostgreSQL database server.
