@@ -47,7 +47,7 @@ tags: rails postgresql
 | -------- | ------- |
 | cluster  | a collection of databases that is managed by a single instance of a running database server. |
 | database | a database is a named collection of tables, indexes, views, stored procedures, and other database objects. |
-| schema    | the implementation in postgres of the namespace concept. |
+| schema    | analogous to directories at the operating system level, except that schemas cannot be nested. |
 | table    | organizes data into rows and columns, where each column has a specific data type, and each row represents a single record. It serves as the primary structure for storing and managing relational data. |
 | row    | a horizontal group of related data within a table |
 | column    | a column is a vertical structure in a table that represents a single attribute or field of the data stored in the table. |
@@ -88,6 +88,34 @@ tags: rails postgresql
   - default
   - index
 -`NULL`: represents missing or unknown information.
+
+
+# Installation and Setup
+
+Some of below content should be moved here.
+
+# Learn SQL
+
+## DDL Queries
+
+**Schema**
+
+By default such tables (and other objects) are automatically put into a schema named “public”. Every new database contains such a schema. 
+
+- In `psql`, use `\dn` to quickly view schemas of current database.
+
+```
+# Create a schema
+CREATE SCHEMA myschema;
+
+# Drop a schema
+DROP SCHEMA myschema;
+
+# reference a table under a schema
+schema.table
+```
+
+## DML Queries
 
 ### PostgreSQL Server Applications
 
