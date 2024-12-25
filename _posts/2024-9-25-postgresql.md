@@ -115,6 +115,18 @@ DROP SCHEMA myschema;
 schema.table
 ```
 
+**Table**
+
+```
+CREATE TABLE
+DROP TABLE
+ALTER TABLE
+```
+
+**Data Type**
+
+(Chapter 8. Data Types)[https://www.postgresql.org/docs/current/datatype.html]
+
 ## DML Queries
 
 ### PostgreSQL Server Applications
