@@ -129,6 +129,33 @@ ALTER TABLE
 
 ## DML Queries
 
+**Query**
+
+- SELECT
+
+**Filter**
+
+- WHERE
+- GROUP BY
+- HAVING
+- LIMIT
+
+**Modify**
+
+- INSERT
+- UPDATE
+- DELETE
+
+**Multiple**
+
+> Access multiple tables at once, or access the same table in such a way that multiple rows of the table are being processed at the same time.
+
+- JOIN
+
+**Copy Data**
+
+- COPY
+
 ### PostgreSQL Server Applications
 
 - `postgres`: PostgreSQL database server.
