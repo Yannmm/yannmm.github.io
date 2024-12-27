@@ -21,7 +21,7 @@ tags: rails postgresql
 
 # Basic RDBMS Concepts
 
-## Object Model in PostgreSQL
+## Object Model
 
 > PostgreSQL is an object-relational database management system (ORDBMS). It complies to SQL standard as well as providing object-oriented features:
 
@@ -51,8 +51,7 @@ tags: rails postgresql
 | table    | organizes data into rows and columns, where each column has a specific data type, and each row represents a single record. It serves as the primary structure for storing and managing relational data. |
 | row    | a horizontal group of related data within a table |
 | column    | a column is a vertical structure in a table that represents a single attribute or field of the data stored in the table. |
-| date type | a general pattern for data the column accepts and stores. |
-
+| date type | a general pattern for data the column accepts and stores. https://www.postgresql.org/docs/current/datatype.html |
 
 ## High-level Database Concepts
 
@@ -122,10 +121,6 @@ CREATE TABLE
 DROP TABLE
 ALTER TABLE
 ```
-
-**Data Type**
-
-(Chapter 8. Data Types)[https://www.postgresql.org/docs/current/datatype.html]
 
 ## DML Queries
 
