@@ -1,7 +1,7 @@
 ---
 layout: post
-title: The Simple Nix Guide
-tags: nix
+title: Nix Learning Roadmap
+tags: nix devops
 ---
 
 
