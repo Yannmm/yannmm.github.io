@@ -1,8 +1,55 @@
 ---
 layout: post
-title: Css Roadmap
-tags: css
+title: "Css Roadmap 2025: Learn CSS by Tailwind"
+tags: css tailwind
 ---
+
+> How to learn?
+
+[Tailwind Playground](https://play.tailwindcss.com) can show "Generated CSS" from html snippet. A good tool to learn things under the hood.
+
+
+# Tailwind
+
+## Base Styles
+
+- built on top of `modern-normalize`.
+- 
+
+## Spacing
+
+- padding: px-1, pt-2.5
+- margin: my-1, m-4, -mt-8
+- space bwteen: space-x-4
+
+## Sizing
+
+- width: w-12, w-1/6
+- min-width
+- max-width
+- height
+- min-height
+- max-height
+- size
+
+## Layout
+
+- aspect ratio
+- container: A component for fixing an element's width to the current breakpoint.
+- columns
+- break after
+- break before
+- break inside
+- box decoration break
+- box sizing
+
+## Flexbox & Grid
+
+## Backgrounds
+
+## Borders
+
+
 
 Spend some time per day to learn CSS basics.
 
