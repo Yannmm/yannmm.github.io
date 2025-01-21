@@ -35,13 +35,17 @@ tags: css tailwind
 ## Layout
 
 - aspect ratio
-- container: A component for fixing an element's width to the current breakpoint.
-- columns
+- container: a component for fixing an element's width to the current breakpoint.
+    - [@media](https://developer.mozilla.org/en-US/docs/Web/CSS/@media)
+- columns: multi-column layout.
+    - [columns](https://developer.mozilla.org/en-US/docs/Web/CSS/columns)
+
 - break after
 - break before
 - break inside
 - box decoration break
-- box sizing
+- box sizing: how the total width and height of an element is calculated
+    - [box-sizing](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
 
 ## Flexbox & Grid
 
