@@ -44,8 +44,10 @@ tags: css tailwind
 - break before
 - break inside
 - box decoration break
-- box sizing: how the total width and height of an element is calculated
+- box sizing: how the total width and height of an element is calculated.
     - [box-sizing](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
+- display: display box type of an element.
+    - [display](https://tailwindcss.com/docs/display)
 
 ## Flexbox & Grid
 
