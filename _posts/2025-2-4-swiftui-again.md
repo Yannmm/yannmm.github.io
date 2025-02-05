@@ -16,6 +16,17 @@ with this protocol, you can
 2. adding animations to a view.
 3. handling view taps and gestures.
 
+
+- `NSHostingController`: a view controller that wraps and manages a SwiftUI view hierarchy for integration into UIKit/AppKit-based applications.
+
+- `Property Wrapper`: adds a layer of separation between code that manages how a property is stored and the code that defines a property.
+
+- `Marco` refers to compile-time code transformations that generate repetitive or boilerplate code automatically.
+
+- A State property always instantiates its default value when SwiftUI instantiates the view.
+
+- `ObservableObject` vs `@Observable`.
+
 ### What
 
 
